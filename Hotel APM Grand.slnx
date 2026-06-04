@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="Hotel APM Grand/Hotel APM Grand.csproj" />
+  <Project Path="CapaDatos/CapaDatos.csproj" Id="ca1f37c8-88d4-45ae-84ec-17154bb452df" />
+  <Project Path="CapaEntidades/CapaEntidades.csproj" Id="44ed0b90-2c0a-408e-bfc0-30c61caba66d" />
+  <Project Path="CapaLogica/CapaLogica.csproj" Id="6f35de80-5ac7-4957-a2e0-7fe0f81ca2cc" />
+  <Project Path="Hotel APM Grand/Presentacion.csproj" />
 </Solution>
