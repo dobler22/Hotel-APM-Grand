@@ -6,4 +6,32 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Hotel_APM_Grand.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Hotel_APM_Grand.designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{3259aa49-8aa1-44d3-9025-a0b520596a8c}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Hotel_APM_Grand.designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Hotel_APM_Grand.dbml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>
