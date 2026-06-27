@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="CancelacionCD.cs" />
     <Compile Include="ClienteCD.cs" />
-    <Compile Include="Conexion.cs" />
     <Compile Include="DashboardCD.cs" />
     <Compile Include="DatosExcepciones.cs" />
     <Compile Include="EmpleadoCD.cs" />
