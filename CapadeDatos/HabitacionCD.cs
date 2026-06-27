@@ -1,11 +1,9 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using CapaEntidades.Habitacion;
-using HotelAPMGrand.Entidades;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class HabitacionCD
     {
@@ -21,7 +19,8 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static List<sp_Habitacion_DisponiblesResult> ListarDisponibles(DateTime entrada, DateTime salida, string tipo)
+        public static List<sp_Habitacion_DisponiblesResult> ListarDisponibles(
+            System.Nullable<DateTime> entrada, System.Nullable<DateTime> salida, string tipo)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
@@ -45,15 +44,15 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Crear(Habitacion ol)
+        public static void Crear(string numero, string tipo, int capacidad,
+                                  int piso, decimal precioPorNoche)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Habitacion_Crear(ol.Numero, ol.Tipo, ol.Capacidad,
-                        ol.Piso, ol.PrecioPorNoche);
+                    DB.sp_Habitacion_Crear(numero, tipo, capacidad, piso, precioPorNoche);
                     DB.SubmitChanges();
                 }
             }
@@ -61,15 +60,14 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Actualizar(Habitacion ol)
+        public static void Actualizar(int idHabitacion, string tipo, int capacidad, decimal precio)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Habitacion_Actualizar(ol.IdHabitacion, ol.Tipo,
-                        ol.Capacidad, ol.PrecioPorNoche);
+                    DB.sp_Habitacion_Actualizar(idHabitacion, tipo, capacidad, precio);
                     DB.SubmitChanges();
                 }
             }

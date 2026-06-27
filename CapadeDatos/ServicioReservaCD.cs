@@ -1,11 +1,9 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using CapaEntidades.ServicioReserva;
-using HotelAPMGrand.Entidades;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class ServicioReservaCD
     {
@@ -33,14 +31,14 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Agregar(ServicioReserva ol)
+        public static void Agregar(int idReserva, int idServicio, int cantidad)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_ServicioReserva_Agregar(ol.IdReserva, ol.IdServicio, ol.Cantidad);
+                    DB.sp_ServicioReserva_Agregar(idReserva, idServicio, cantidad);
                     DB.SubmitChanges();
                 }
             }

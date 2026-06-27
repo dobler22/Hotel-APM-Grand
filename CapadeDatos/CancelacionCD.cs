@@ -1,15 +1,14 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using HotelAPMGrand.Entidades;
-using System.Data.SqlClient;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class CancelacionCD
     {
-        public static List<sp_Cancelacion_ListarResult> Listar(DateTime? fechaInicio, DateTime? fechaFin)
+        public static List<sp_Cancelacion_ListarResult> Listar(
+            System.Nullable<DateTime> fechaInicio, System.Nullable<DateTime> fechaFin)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
@@ -33,15 +32,16 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Registrar(Cancelacion ol)
+        public static void Registrar(int idReserva, string motivo,
+                                      System.Nullable<decimal> penalizacion,
+                                      System.Nullable<decimal> reembolso, string solicitadoPor)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Cancelacion_Registrar(ol.IdReserva, ol.Motivo,
-                        ol.Penalizacion, ol.Reembolso, ol.SolicitadoPor);
+                    DB.sp_Cancelacion_Registrar(idReserva, motivo, penalizacion, reembolso, solicitadoPor);
                     DB.SubmitChanges();
                 }
             }
@@ -49,15 +49,16 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Actualizar(Cancelacion ol)
+        public static void Actualizar(int idCancelacion, string motivo,
+                                       System.Nullable<decimal> penalizacion,
+                                       System.Nullable<decimal> reembolso)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Cancelacion_Actualizar(ol.IdCancelacion, ol.Motivo,
-                        ol.Penalizacion, ol.Reembolso);
+                    DB.sp_Cancelacion_Actualizar(idCancelacion, motivo, penalizacion, reembolso);
                     DB.SubmitChanges();
                 }
             }

@@ -1,11 +1,9 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using CapaEntidades.Reserva;
-using HotelAPMGrand.Entidades;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class ReservaCD
     {
@@ -45,16 +43,29 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Crear(Reserva ol)
+        public static List<sp_Reserva_DetalleResult> Detalle(int idReserva)
+        {
+            Hotel_APM_GrandDataContext DB = null;
+            try
+            {
+                using (DB = new Hotel_APM_GrandDataContext())
+                    return DB.sp_Reserva_Detalle(idReserva).ToList();
+            }
+            catch (Exception ex) { throw new DatosExcepciones("Error al obtener detalle de Reserva", ex); }
+            finally { DB = null; }
+        }
+
+        public static void Crear(int idCliente, int idHabitacion,
+                                  System.Nullable<DateTime> fechaEntrada,
+                                  System.Nullable<DateTime> fechaSalida)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    int? idOut = 0;
-                    DB.sp_Reserva_Crear(ol.IdCliente, ol.IdHabitacion,
-                        ol.FechaEntrada, ol.FechaSalida, ref idOut);
+                    System.Nullable<int> idOut = 0;
+                    DB.sp_Reserva_Crear(idCliente, idHabitacion, fechaEntrada, fechaSalida, ref idOut);
                     DB.SubmitChanges();
                 }
             }
@@ -62,14 +73,16 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Actualizar(Reserva ol)
+        public static void Actualizar(int idReserva,
+                                       System.Nullable<DateTime> fechaEntrada,
+                                       System.Nullable<DateTime> fechaSalida)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Reserva_Actualizar(ol.IdReserva, ol.FechaEntrada, ol.FechaSalida);
+                    DB.sp_Reserva_Actualizar(idReserva, fechaEntrada, fechaSalida);
                     DB.SubmitChanges();
                 }
             }

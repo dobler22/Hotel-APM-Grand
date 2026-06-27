@@ -1,11 +1,9 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using CapaEntidades.Cliente;
-using HotelAPMGrand.Entidades;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class ClienteCD
     {
@@ -33,17 +31,18 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Crear(Cliente ol)
+        public static void Crear(string email, string passwordHash, string nombre, string apellido,
+                                  string telefono, string documento, string nacionalidad,
+                                  System.Nullable<DateTime> fechaNacimiento)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    int? idOut = 0;
-                    DB.sp_Cliente_Crear(ol.Nombre, ol.Apellido, ol.Telefono,
-                        ol.DocumentoIdentidad, ol.Nacionalidad, ol.FechaNacimiento,
-                        "", "", ref idOut);
+                    System.Nullable<int> idOut = 0;
+                    DB.sp_Cliente_Crear(email, passwordHash, nombre, apellido,
+                        telefono, documento, nacionalidad, fechaNacimiento, ref idOut);
                     DB.SubmitChanges();
                 }
             }
@@ -51,15 +50,16 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Actualizar(Cliente ol)
+        public static void Actualizar(int idCliente, string nombre, string apellido,
+                                       string telefono, string nacionalidad,
+                                       System.Nullable<DateTime> fechaNacimiento)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Cliente_Actualizar(ol.IdCliente, ol.Nombre, ol.Apellido,
-                        ol.Telefono, ol.Nacionalidad, ol.FechaNacimiento);
+                    DB.sp_Cliente_Actualizar(idCliente, nombre, apellido, telefono, nacionalidad, fechaNacimiento);
                     DB.SubmitChanges();
                 }
             }

@@ -1,10 +1,9 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using HotelAPMGrand.Entidades;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class PagoCD
     {
@@ -44,16 +43,16 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Registrar(Pago ol)
+        public static void Registrar(int idReserva, System.Nullable<decimal> monto,
+                                      string metodoPago, string referencia)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    int? idOut = 0;
-                    DB.sp_Pago_Registrar(ol.IdReserva, ol.Monto,
-                        ol.MetodoPago, ol.Referencia, ref idOut);
+                    System.Nullable<int> idOut = 0;
+                    DB.sp_Pago_Registrar(idReserva, monto, metodoPago, referencia, ref idOut);
                     DB.SubmitChanges();
                 }
             }

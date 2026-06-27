@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Base_Datos_Hotel_APM_Grand" Class="Hotel_APM_GrandDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=Base_Datos_Hotel_APM_Grand;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="CapadeDatos.Properties.Settings" SettingsPropertyName="Base_Datos_Hotel_APM_GrandConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Cancelaciones" Member="Cancelaciones">
     <Type Name="Cancelaciones">
       <Column Name="id_cancelacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

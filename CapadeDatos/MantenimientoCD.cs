@@ -1,11 +1,9 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using HotelAPMGrand.Entidades;
-using Mantenimiento = CapaDatos.Mantenimiento;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class MantenimientoCD
     {
@@ -45,15 +43,15 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Crear(Mantenimiento ol)
+        public static void Crear(int idHabitacion, int idEmpleado, string tipoTrabajo,
+                                  System.Nullable<DateTime> fechaInicio, string observaciones)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Mantenimiento_Crear(ol.IdHabitacion, ol.IdEmpleado,
-                        ol.TipoTrabajo, ol.FechaInicio, ol.Observaciones);
+                    DB.sp_Mantenimiento_Crear(idHabitacion, idEmpleado, tipoTrabajo, fechaInicio, observaciones);
                     DB.SubmitChanges();
                 }
             }
@@ -61,15 +59,14 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Actualizar(Mantenimiento ol)
+        public static void Actualizar(int idMantenimiento, string tipoTrabajo, string observaciones)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Mantenimiento_Actualizar(ol.IdMantenimiento,
-                        ol.TipoTrabajo, ol.Observaciones);
+                    DB.sp_Mantenimiento_Actualizar(idMantenimiento, tipoTrabajo, observaciones);
                     DB.SubmitChanges();
                 }
             }
@@ -77,7 +74,7 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Finalizar(int idMantenimiento, DateTime fechaFin)
+        public static void Finalizar(int idMantenimiento, System.Nullable<DateTime> fechaFin)
         {
             Hotel_APM_GrandDataContext DB = null;
             try

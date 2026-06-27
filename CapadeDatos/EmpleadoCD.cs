@@ -1,11 +1,9 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using CapaEntidades.Empleado;
-using HotelAPMGrand.Entidades;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class EmpleadoCD
     {
@@ -45,16 +43,18 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Crear(Empleado ol)
+        public static void Crear(string email, string passwordHash, string nombre, string apellido,
+                                  string cargo, string area, string telefono,
+                                  System.Nullable<DateTime> fechaIngreso)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    int? idOut = 0;
-                    DB.sp_Empleado_Crear(ol.Nombre, ol.Apellido, ol.Cargo,
-                        ol.Area, ol.Telefono, ol.FechaIngreso, "", "", ref idOut);
+                    System.Nullable<int> idOut = 0;
+                    DB.sp_Empleado_Crear(email, passwordHash, nombre, apellido,
+                        cargo, area, telefono, fechaIngreso, ref idOut);
                     DB.SubmitChanges();
                 }
             }
@@ -62,14 +62,14 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Actualizar(Empleado ol)
+        public static void Actualizar(int idEmpleado, string cargo, string area, string telefono)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Empleado_Actualizar(ol.IdEmpleado, ol.Cargo, ol.Area, ol.Telefono);
+                    DB.sp_Empleado_Actualizar(idEmpleado, cargo, area, telefono);
                     DB.SubmitChanges();
                 }
             }

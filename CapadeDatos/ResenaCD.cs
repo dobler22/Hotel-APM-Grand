@@ -1,10 +1,9 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using HotelAPMGrand.Entidades;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class ResenaCD
     {
@@ -44,15 +43,15 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Crear(Resena ol)
+        public static void Crear(int idReserva, int idCliente,
+                                  System.Nullable<int> calificacion, string comentario)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Resena_Crear(ol.IdReserva, ol.IdCliente,
-                        ol.Calificacion, ol.Comentario);
+                    DB.sp_Resena_Crear(idReserva, idCliente, calificacion, comentario);
                     DB.SubmitChanges();
                 }
             }
@@ -60,14 +59,14 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Actualizar(Resena ol)
+        public static void Actualizar(int idResena, System.Nullable<int> calificacion, string comentario)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Resena_Actualizar(ol.IdResena, ol.Calificacion, ol.Comentario);
+                    DB.sp_Resena_Actualizar(idResena, calificacion, comentario);
                     DB.SubmitChanges();
                 }
             }

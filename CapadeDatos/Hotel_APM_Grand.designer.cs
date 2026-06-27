@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CapaDatos
+namespace CapadeDatos
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -67,6 +67,12 @@ namespace CapaDatos
     partial void UpdateUsuarios(Usuarios instance);
     partial void DeleteUsuarios(Usuarios instance);
     #endregion
+		
+		public Hotel_APM_GrandDataContext() : 
+				base(global::CapadeDatos.Properties.Settings.Default.Base_Datos_Hotel_APM_GrandConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public Hotel_APM_GrandDataContext(string connection) : 
 				base(connection, mappingSource)

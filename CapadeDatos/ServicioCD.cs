@@ -1,11 +1,9 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using CapaEntidades.Servicio;
-using HotelAPMGrand.Entidades;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class ServicioCD
     {
@@ -33,14 +31,14 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Crear(Servicio ol)
+        public static void Crear(string nombre, string descripcion, System.Nullable<decimal> precio)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Servicio_Crear(ol.Nombre, ol.Descripcion, ol.Precio);
+                    DB.sp_Servicio_Crear(nombre, descripcion, precio);
                     DB.SubmitChanges();
                 }
             }
@@ -48,15 +46,15 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void Actualizar(Servicio ol)
+        public static void Actualizar(int idServicio, string nombre,
+                                       string descripcion, System.Nullable<decimal> precio)
         {
             Hotel_APM_GrandDataContext DB = null;
             try
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    DB.sp_Servicio_Actualizar(ol.IdServicio, ol.Nombre,
-                        ol.Descripcion, ol.Precio);
+                    DB.sp_Servicio_Actualizar(idServicio, nombre, descripcion, precio);
                     DB.SubmitChanges();
                 }
             }
@@ -64,7 +62,7 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static void CambiarDisponibilidad(int idServicio, bool disponible)
+        public static void CambiarDisponibilidad(int idServicio, System.Nullable<bool> disponible)
         {
             Hotel_APM_GrandDataContext DB = null;
             try

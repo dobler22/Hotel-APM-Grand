@@ -1,8 +1,9 @@
-using CapaDatos;
+using CapadeDatos;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class DashboardCD
     {
@@ -18,7 +19,7 @@ namespace Datos.Hotel
             finally { DB = null; }
         }
 
-        public static System.Collections.Generic.List<sp_Dashboard_ResumenEmpleadoResult> ResumenEmpleado()
+        public static List<sp_Dashboard_ResumenEmpleadoResult> ResumenEmpleado()
         {
             Hotel_APM_GrandDataContext DB = null;
             try

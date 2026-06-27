@@ -1,10 +1,9 @@
+using CapadeDatos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CapaDatos;
-using HotelAPMGrand.Entidades;
 
-namespace Datos.Hotel
+namespace CapaDatos
 {
     public class FacturaCD
     {
@@ -51,7 +50,7 @@ namespace Datos.Hotel
             {
                 using (DB = new Hotel_APM_GrandDataContext())
                 {
-                    int? idOut = 0;
+                    System.Nullable<int> idOut = 0;
                     DB.sp_Factura_Generar(idReserva, ref idOut);
                     DB.SubmitChanges();
                 }
