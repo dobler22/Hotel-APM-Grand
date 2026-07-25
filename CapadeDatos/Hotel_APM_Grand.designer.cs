@@ -69,7 +69,7 @@ namespace CapadeDatos
     #endregion
 		
 		public Hotel_APM_GrandDataContext() : 
-				base(global::CapadeDatos.Properties.Settings.Default.Base_Datos_Hotel_APM_GrandConnectionString, mappingSource)
+				base(global::CapadeDatos.Properties.Settings.Default.Base_Datos_Hotel_APM_GrandConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
