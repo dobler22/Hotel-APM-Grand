@@ -44,8 +44,10 @@
     <Compile Include="Class1.cs" />
     <Compile Include="ClienteLN.cs" />
     <Compile Include="EmpleadoLN.cs" />
+    <Compile Include="HabitacionLN.cs" />
     <Compile Include="LogicaExcepciones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservaLN.cs" />
     <Compile Include="UsuarioLN.cs" />
   </ItemGroup>
   <ItemGroup>
