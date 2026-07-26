@@ -46,6 +46,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Cliente\Cliente.cs" />
     <Compile Include="Cliente\VwCliente.cs" />
+    <Compile Include="DashboardDTO.cs" />
     <Compile Include="Empleado\Empleado.cs" />
     <Compile Include="Empleado\VwEmpleado.cs" />
     <Compile Include="Factura\Factura.cs" />

@@ -22,7 +22,7 @@ namespace CapadeDatos
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Base_Datos_Hotel_APM_Grand")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="base de datos 2")]
 	public partial class Hotel_APM_GrandDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -69,7 +69,7 @@ namespace CapadeDatos
     #endregion
 		
 		public Hotel_APM_GrandDataContext() : 
-				base(global::CapadeDatos.Properties.Settings.Default.Base_Datos_Hotel_APM_GrandConnectionString1, mappingSource)
+				base(global::CapadeDatos.Properties.Settings.Default.base_de_datos_2ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -645,6 +645,13 @@ namespace CapadeDatos
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Resena_Crear")]
+		public int sp_Resena_Crear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_cliente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> calificacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string comentario)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva, id_cliente, calificacion, comentario);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Resena_Eliminar")]
 		public int sp_Resena_Eliminar([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_resena)
 		{
@@ -671,6 +678,63 @@ namespace CapadeDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<sp_Resena_PromedioGeneralResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_Actualizar")]
+		public int sp_Reserva_Actualizar([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha_entrada, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha_salida)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva, fecha_entrada, fecha_salida);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_CambiarEstado")]
+		public int sp_Reserva_CambiarEstado([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva, estado);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_Crear")]
+		public int sp_Reserva_Crear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_cliente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_habitacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha_entrada, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha_salida, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> id_reserva_out)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_cliente, id_habitacion, fecha_entrada, fecha_salida, id_reserva_out);
+			id_reserva_out = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_Detalle")]
+		public ISingleResult<sp_Reserva_DetalleResult> sp_Reserva_Detalle([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva);
+			return ((ISingleResult<sp_Reserva_DetalleResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_Eliminar")]
+		public int sp_Reserva_Eliminar([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_Listar")]
+		public ISingleResult<sp_Reserva_ListarResult> sp_Reserva_Listar()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_Reserva_ListarResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_ListarPorEstado")]
+		public ISingleResult<sp_Reserva_ListarPorEstadoResult> sp_Reserva_ListarPorEstado([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string estado)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado);
+			return ((ISingleResult<sp_Reserva_ListarPorEstadoResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_ObtenerPorId")]
+		public ISingleResult<sp_Reserva_ObtenerPorIdResult> sp_Reserva_ObtenerPorId([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva);
+			return ((ISingleResult<sp_Reserva_ObtenerPorIdResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Servicio_Actualizar")]
@@ -798,63 +862,6 @@ namespace CapadeDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_usuario);
 			return ((ISingleResult<sp_Usuario_ObtenerPorIdResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_Actualizar")]
-		public int sp_Reserva_Actualizar([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha_entrada, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha_salida)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva, fecha_entrada, fecha_salida);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_CambiarEstado")]
-		public int sp_Reserva_CambiarEstado([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string estado)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva, estado);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_Crear")]
-		public int sp_Reserva_Crear([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_cliente, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_habitacion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha_entrada, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> fecha_salida, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] ref System.Nullable<int> id_reserva_out)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_cliente, id_habitacion, fecha_entrada, fecha_salida, id_reserva_out);
-			id_reserva_out = ((System.Nullable<int>)(result.GetParameterValue(4)));
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_Detalle")]
-		public ISingleResult<sp_Reserva_DetalleResult> sp_Reserva_Detalle([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva);
-			return ((ISingleResult<sp_Reserva_DetalleResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_Eliminar")]
-		public int sp_Reserva_Eliminar([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_Listar")]
-		public ISingleResult<sp_Reserva_ListarResult> sp_Reserva_Listar()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<sp_Reserva_ListarResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_ListarPorEstado")]
-		public ISingleResult<sp_Reserva_ListarPorEstadoResult> sp_Reserva_ListarPorEstado([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string estado)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), estado);
-			return ((ISingleResult<sp_Reserva_ListarPorEstadoResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Reserva_ObtenerPorId")]
-		public ISingleResult<sp_Reserva_ObtenerPorIdResult> sp_Reserva_ObtenerPorId([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_reserva)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_reserva);
-			return ((ISingleResult<sp_Reserva_ObtenerPorIdResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -9756,6 +9763,560 @@ namespace CapadeDatos
 		}
 	}
 	
+	public partial class sp_Reserva_DetalleResult
+	{
+		
+		private int _id_reserva;
+		
+		private string _Cliente;
+		
+		private string _Habitacion;
+		
+		private string _tipo;
+		
+		private decimal _precio_por_noche;
+		
+		private System.DateTime _fecha_entrada;
+		
+		private System.DateTime _fecha_salida;
+		
+		private System.Nullable<int> _Noches;
+		
+		private string _estado;
+		
+		public sp_Reserva_DetalleResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_reserva", DbType="Int NOT NULL")]
+		public int id_reserva
+		{
+			get
+			{
+				return this._id_reserva;
+			}
+			set
+			{
+				if ((this._id_reserva != value))
+				{
+					this._id_reserva = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cliente", DbType="NVarChar(201) NOT NULL", CanBeNull=false)]
+		public string Cliente
+		{
+			get
+			{
+				return this._Cliente;
+			}
+			set
+			{
+				if ((this._Cliente != value))
+				{
+					this._Cliente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Habitacion", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string Habitacion
+		{
+			get
+			{
+				return this._Habitacion;
+			}
+			set
+			{
+				if ((this._Habitacion != value))
+				{
+					this._Habitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string tipo
+		{
+			get
+			{
+				return this._tipo;
+			}
+			set
+			{
+				if ((this._tipo != value))
+				{
+					this._tipo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio_por_noche", DbType="Money NOT NULL")]
+		public decimal precio_por_noche
+		{
+			get
+			{
+				return this._precio_por_noche;
+			}
+			set
+			{
+				if ((this._precio_por_noche != value))
+				{
+					this._precio_por_noche = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_entrada", DbType="Date NOT NULL")]
+		public System.DateTime fecha_entrada
+		{
+			get
+			{
+				return this._fecha_entrada;
+			}
+			set
+			{
+				if ((this._fecha_entrada != value))
+				{
+					this._fecha_entrada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_salida", DbType="Date NOT NULL")]
+		public System.DateTime fecha_salida
+		{
+			get
+			{
+				return this._fecha_salida;
+			}
+			set
+			{
+				if ((this._fecha_salida != value))
+				{
+					this._fecha_salida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Noches", DbType="Int")]
+		public System.Nullable<int> Noches
+		{
+			get
+			{
+				return this._Noches;
+			}
+			set
+			{
+				if ((this._Noches != value))
+				{
+					this._Noches = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this._estado = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Reserva_ListarResult
+	{
+		
+		private int _id_reserva;
+		
+		private string _Cliente;
+		
+		private string _Habitacion;
+		
+		private System.DateTime _fecha_entrada;
+		
+		private System.DateTime _fecha_salida;
+		
+		private string _estado;
+		
+		private System.DateTime _fecha_creacion;
+		
+		public sp_Reserva_ListarResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_reserva", DbType="Int NOT NULL")]
+		public int id_reserva
+		{
+			get
+			{
+				return this._id_reserva;
+			}
+			set
+			{
+				if ((this._id_reserva != value))
+				{
+					this._id_reserva = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cliente", DbType="NVarChar(201) NOT NULL", CanBeNull=false)]
+		public string Cliente
+		{
+			get
+			{
+				return this._Cliente;
+			}
+			set
+			{
+				if ((this._Cliente != value))
+				{
+					this._Cliente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Habitacion", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string Habitacion
+		{
+			get
+			{
+				return this._Habitacion;
+			}
+			set
+			{
+				if ((this._Habitacion != value))
+				{
+					this._Habitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_entrada", DbType="Date NOT NULL")]
+		public System.DateTime fecha_entrada
+		{
+			get
+			{
+				return this._fecha_entrada;
+			}
+			set
+			{
+				if ((this._fecha_entrada != value))
+				{
+					this._fecha_entrada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_salida", DbType="Date NOT NULL")]
+		public System.DateTime fecha_salida
+		{
+			get
+			{
+				return this._fecha_salida;
+			}
+			set
+			{
+				if ((this._fecha_salida != value))
+				{
+					this._fecha_salida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this._estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_creacion", DbType="DateTime2 NOT NULL")]
+		public System.DateTime fecha_creacion
+		{
+			get
+			{
+				return this._fecha_creacion;
+			}
+			set
+			{
+				if ((this._fecha_creacion != value))
+				{
+					this._fecha_creacion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Reserva_ListarPorEstadoResult
+	{
+		
+		private int _id_reserva;
+		
+		private string _Cliente;
+		
+		private string _Habitacion;
+		
+		private System.DateTime _fecha_entrada;
+		
+		private System.DateTime _fecha_salida;
+		
+		private string _estado;
+		
+		public sp_Reserva_ListarPorEstadoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_reserva", DbType="Int NOT NULL")]
+		public int id_reserva
+		{
+			get
+			{
+				return this._id_reserva;
+			}
+			set
+			{
+				if ((this._id_reserva != value))
+				{
+					this._id_reserva = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cliente", DbType="NVarChar(201) NOT NULL", CanBeNull=false)]
+		public string Cliente
+		{
+			get
+			{
+				return this._Cliente;
+			}
+			set
+			{
+				if ((this._Cliente != value))
+				{
+					this._Cliente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Habitacion", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string Habitacion
+		{
+			get
+			{
+				return this._Habitacion;
+			}
+			set
+			{
+				if ((this._Habitacion != value))
+				{
+					this._Habitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_entrada", DbType="Date NOT NULL")]
+		public System.DateTime fecha_entrada
+		{
+			get
+			{
+				return this._fecha_entrada;
+			}
+			set
+			{
+				if ((this._fecha_entrada != value))
+				{
+					this._fecha_entrada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_salida", DbType="Date NOT NULL")]
+		public System.DateTime fecha_salida
+		{
+			get
+			{
+				return this._fecha_salida;
+			}
+			set
+			{
+				if ((this._fecha_salida != value))
+				{
+					this._fecha_salida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this._estado = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_Reserva_ObtenerPorIdResult
+	{
+		
+		private int _id_reserva;
+		
+		private int _id_cliente;
+		
+		private int _id_habitacion;
+		
+		private System.DateTime _fecha_entrada;
+		
+		private System.DateTime _fecha_salida;
+		
+		private string _estado;
+		
+		private System.DateTime _fecha_creacion;
+		
+		public sp_Reserva_ObtenerPorIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_reserva", DbType="Int NOT NULL")]
+		public int id_reserva
+		{
+			get
+			{
+				return this._id_reserva;
+			}
+			set
+			{
+				if ((this._id_reserva != value))
+				{
+					this._id_reserva = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cliente", DbType="Int NOT NULL")]
+		public int id_cliente
+		{
+			get
+			{
+				return this._id_cliente;
+			}
+			set
+			{
+				if ((this._id_cliente != value))
+				{
+					this._id_cliente = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_habitacion", DbType="Int NOT NULL")]
+		public int id_habitacion
+		{
+			get
+			{
+				return this._id_habitacion;
+			}
+			set
+			{
+				if ((this._id_habitacion != value))
+				{
+					this._id_habitacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_entrada", DbType="Date NOT NULL")]
+		public System.DateTime fecha_entrada
+		{
+			get
+			{
+				return this._fecha_entrada;
+			}
+			set
+			{
+				if ((this._fecha_entrada != value))
+				{
+					this._fecha_entrada = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_salida", DbType="Date NOT NULL")]
+		public System.DateTime fecha_salida
+		{
+			get
+			{
+				return this._fecha_salida;
+			}
+			set
+			{
+				if ((this._fecha_salida != value))
+				{
+					this._fecha_salida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this._estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_creacion", DbType="DateTime2 NOT NULL")]
+		public System.DateTime fecha_creacion
+		{
+			get
+			{
+				return this._fecha_creacion;
+			}
+			set
+			{
+				if ((this._fecha_creacion != value))
+				{
+					this._fecha_creacion = value;
+				}
+			}
+		}
+	}
+	
 	public partial class sp_Servicio_ListarResult
 	{
 		
@@ -10411,560 +10972,6 @@ namespace CapadeDatos
 				if ((this._updated_at != value))
 				{
 					this._updated_at = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_Reserva_DetalleResult
-	{
-		
-		private int _id_reserva;
-		
-		private string _Cliente;
-		
-		private string _Habitacion;
-		
-		private string _tipo;
-		
-		private decimal _precio_por_noche;
-		
-		private System.DateTime _fecha_entrada;
-		
-		private System.DateTime _fecha_salida;
-		
-		private System.Nullable<int> _Noches;
-		
-		private string _estado;
-		
-		public sp_Reserva_DetalleResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_reserva", DbType="Int NOT NULL")]
-		public int id_reserva
-		{
-			get
-			{
-				return this._id_reserva;
-			}
-			set
-			{
-				if ((this._id_reserva != value))
-				{
-					this._id_reserva = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cliente", DbType="NVarChar(201) NOT NULL", CanBeNull=false)]
-		public string Cliente
-		{
-			get
-			{
-				return this._Cliente;
-			}
-			set
-			{
-				if ((this._Cliente != value))
-				{
-					this._Cliente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Habitacion", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string Habitacion
-		{
-			get
-			{
-				return this._Habitacion;
-			}
-			set
-			{
-				if ((this._Habitacion != value))
-				{
-					this._Habitacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tipo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string tipo
-		{
-			get
-			{
-				return this._tipo;
-			}
-			set
-			{
-				if ((this._tipo != value))
-				{
-					this._tipo = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_precio_por_noche", DbType="Money NOT NULL")]
-		public decimal precio_por_noche
-		{
-			get
-			{
-				return this._precio_por_noche;
-			}
-			set
-			{
-				if ((this._precio_por_noche != value))
-				{
-					this._precio_por_noche = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_entrada", DbType="Date NOT NULL")]
-		public System.DateTime fecha_entrada
-		{
-			get
-			{
-				return this._fecha_entrada;
-			}
-			set
-			{
-				if ((this._fecha_entrada != value))
-				{
-					this._fecha_entrada = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_salida", DbType="Date NOT NULL")]
-		public System.DateTime fecha_salida
-		{
-			get
-			{
-				return this._fecha_salida;
-			}
-			set
-			{
-				if ((this._fecha_salida != value))
-				{
-					this._fecha_salida = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Noches", DbType="Int")]
-		public System.Nullable<int> Noches
-		{
-			get
-			{
-				return this._Noches;
-			}
-			set
-			{
-				if ((this._Noches != value))
-				{
-					this._Noches = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string estado
-		{
-			get
-			{
-				return this._estado;
-			}
-			set
-			{
-				if ((this._estado != value))
-				{
-					this._estado = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_Reserva_ListarResult
-	{
-		
-		private int _id_reserva;
-		
-		private string _Cliente;
-		
-		private string _Habitacion;
-		
-		private System.DateTime _fecha_entrada;
-		
-		private System.DateTime _fecha_salida;
-		
-		private string _estado;
-		
-		private System.DateTime _fecha_creacion;
-		
-		public sp_Reserva_ListarResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_reserva", DbType="Int NOT NULL")]
-		public int id_reserva
-		{
-			get
-			{
-				return this._id_reserva;
-			}
-			set
-			{
-				if ((this._id_reserva != value))
-				{
-					this._id_reserva = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cliente", DbType="NVarChar(201) NOT NULL", CanBeNull=false)]
-		public string Cliente
-		{
-			get
-			{
-				return this._Cliente;
-			}
-			set
-			{
-				if ((this._Cliente != value))
-				{
-					this._Cliente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Habitacion", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string Habitacion
-		{
-			get
-			{
-				return this._Habitacion;
-			}
-			set
-			{
-				if ((this._Habitacion != value))
-				{
-					this._Habitacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_entrada", DbType="Date NOT NULL")]
-		public System.DateTime fecha_entrada
-		{
-			get
-			{
-				return this._fecha_entrada;
-			}
-			set
-			{
-				if ((this._fecha_entrada != value))
-				{
-					this._fecha_entrada = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_salida", DbType="Date NOT NULL")]
-		public System.DateTime fecha_salida
-		{
-			get
-			{
-				return this._fecha_salida;
-			}
-			set
-			{
-				if ((this._fecha_salida != value))
-				{
-					this._fecha_salida = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string estado
-		{
-			get
-			{
-				return this._estado;
-			}
-			set
-			{
-				if ((this._estado != value))
-				{
-					this._estado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_creacion", DbType="DateTime2 NOT NULL")]
-		public System.DateTime fecha_creacion
-		{
-			get
-			{
-				return this._fecha_creacion;
-			}
-			set
-			{
-				if ((this._fecha_creacion != value))
-				{
-					this._fecha_creacion = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_Reserva_ListarPorEstadoResult
-	{
-		
-		private int _id_reserva;
-		
-		private string _Cliente;
-		
-		private string _Habitacion;
-		
-		private System.DateTime _fecha_entrada;
-		
-		private System.DateTime _fecha_salida;
-		
-		private string _estado;
-		
-		public sp_Reserva_ListarPorEstadoResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_reserva", DbType="Int NOT NULL")]
-		public int id_reserva
-		{
-			get
-			{
-				return this._id_reserva;
-			}
-			set
-			{
-				if ((this._id_reserva != value))
-				{
-					this._id_reserva = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cliente", DbType="NVarChar(201) NOT NULL", CanBeNull=false)]
-		public string Cliente
-		{
-			get
-			{
-				return this._Cliente;
-			}
-			set
-			{
-				if ((this._Cliente != value))
-				{
-					this._Cliente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Habitacion", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string Habitacion
-		{
-			get
-			{
-				return this._Habitacion;
-			}
-			set
-			{
-				if ((this._Habitacion != value))
-				{
-					this._Habitacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_entrada", DbType="Date NOT NULL")]
-		public System.DateTime fecha_entrada
-		{
-			get
-			{
-				return this._fecha_entrada;
-			}
-			set
-			{
-				if ((this._fecha_entrada != value))
-				{
-					this._fecha_entrada = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_salida", DbType="Date NOT NULL")]
-		public System.DateTime fecha_salida
-		{
-			get
-			{
-				return this._fecha_salida;
-			}
-			set
-			{
-				if ((this._fecha_salida != value))
-				{
-					this._fecha_salida = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string estado
-		{
-			get
-			{
-				return this._estado;
-			}
-			set
-			{
-				if ((this._estado != value))
-				{
-					this._estado = value;
-				}
-			}
-		}
-	}
-	
-	public partial class sp_Reserva_ObtenerPorIdResult
-	{
-		
-		private int _id_reserva;
-		
-		private int _id_cliente;
-		
-		private int _id_habitacion;
-		
-		private System.DateTime _fecha_entrada;
-		
-		private System.DateTime _fecha_salida;
-		
-		private string _estado;
-		
-		private System.DateTime _fecha_creacion;
-		
-		public sp_Reserva_ObtenerPorIdResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_reserva", DbType="Int NOT NULL")]
-		public int id_reserva
-		{
-			get
-			{
-				return this._id_reserva;
-			}
-			set
-			{
-				if ((this._id_reserva != value))
-				{
-					this._id_reserva = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cliente", DbType="Int NOT NULL")]
-		public int id_cliente
-		{
-			get
-			{
-				return this._id_cliente;
-			}
-			set
-			{
-				if ((this._id_cliente != value))
-				{
-					this._id_cliente = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_habitacion", DbType="Int NOT NULL")]
-		public int id_habitacion
-		{
-			get
-			{
-				return this._id_habitacion;
-			}
-			set
-			{
-				if ((this._id_habitacion != value))
-				{
-					this._id_habitacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_entrada", DbType="Date NOT NULL")]
-		public System.DateTime fecha_entrada
-		{
-			get
-			{
-				return this._fecha_entrada;
-			}
-			set
-			{
-				if ((this._fecha_entrada != value))
-				{
-					this._fecha_entrada = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_salida", DbType="Date NOT NULL")]
-		public System.DateTime fecha_salida
-		{
-			get
-			{
-				return this._fecha_salida;
-			}
-			set
-			{
-				if ((this._fecha_salida != value))
-				{
-					this._fecha_salida = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string estado
-		{
-			get
-			{
-				return this._estado;
-			}
-			set
-			{
-				if ((this._estado != value))
-				{
-					this._estado = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_creacion", DbType="DateTime2 NOT NULL")]
-		public System.DateTime fecha_creacion
-		{
-			get
-			{
-				return this._fecha_creacion;
-			}
-			set
-			{
-				if ((this._fecha_creacion != value))
-				{
-					this._fecha_creacion = value;
 				}
 			}
 		}

@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Base_Datos_Hotel_APM_Grand" Class="Hotel_APM_GrandDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-4K6RV9V2;Initial Catalog=Base_Datos_Hotel_APM_Grand;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="CapadeDatos.Properties.Settings" SettingsPropertyName="Base_Datos_Hotel_APM_GrandConnectionString1" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="base de datos 2" Class="Hotel_APM_GrandDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-CF2J6U8;Initial Catalog=&quot;base de datos 2&quot;;Persist Security Info=True;User ID=sa;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="CapadeDatos.Properties.Settings" SettingsPropertyName="base_de_datos_2ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Cancelaciones" Member="Cancelaciones">
     <Type Name="Cancelaciones">
       <Column Name="id_cancelacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -753,6 +753,13 @@
     <Parameter Name="comentario" Type="System.String" DbType="NVarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_Resena_Crear" Method="sp_Resena_Crear">
+    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_cliente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="calificacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="comentario" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_Resena_Eliminar" Method="sp_Resena_Eliminar">
     <Parameter Name="id_resena" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
@@ -782,6 +789,77 @@
     <ElementType Name="sp_Resena_PromedioGeneralResult">
       <Column Name="PromedioGeneral" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
       <Column Name="TotalResenas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Reserva_Actualizar" Method="sp_Reserva_Actualizar">
+    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha_entrada" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_salida" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Reserva_CambiarEstado" Method="sp_Reserva_CambiarEstado">
+    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
+    <Parameter Name="estado" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Reserva_Crear" Method="sp_Reserva_Crear">
+    <Parameter Name="id_cliente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="id_habitacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha_entrada" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="fecha_salida" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="id_reserva_out" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Reserva_Detalle" Method="sp_Reserva_Detalle">
+    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Reserva_DetalleResult">
+      <Column Name="id_reserva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="Habitacion" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="precio_por_noche" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_entrada" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_salida" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Noches" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Reserva_Eliminar" Method="sp_Reserva_Eliminar">
+    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_Reserva_Listar" Method="sp_Reserva_Listar">
+    <ElementType Name="sp_Reserva_ListarResult">
+      <Column Name="id_reserva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="Habitacion" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_entrada" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_salida" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Reserva_ListarPorEstado" Method="sp_Reserva_ListarPorEstado">
+    <Parameter Name="estado" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="sp_Reserva_ListarPorEstadoResult">
+      <Column Name="id_reserva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="Habitacion" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_entrada" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_salida" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_Reserva_ObtenerPorId" Method="sp_Reserva_ObtenerPorId">
+    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_Reserva_ObtenerPorIdResult">
+      <Column Name="id_reserva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_habitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_entrada" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_salida" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.sp_Servicio_Actualizar" Method="sp_Servicio_Actualizar">
@@ -908,77 +986,6 @@
       <Column Name="activo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_Reserva_Actualizar" Method="sp_Reserva_Actualizar">
-    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
-    <Parameter Name="fecha_entrada" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="fecha_salida" Type="System.DateTime" DbType="Date" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_Reserva_CambiarEstado" Method="sp_Reserva_CambiarEstado">
-    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
-    <Parameter Name="estado" Type="System.String" DbType="NVarChar(20)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_Reserva_Crear" Method="sp_Reserva_Crear">
-    <Parameter Name="id_cliente" Type="System.Int32" DbType="Int" />
-    <Parameter Name="id_habitacion" Type="System.Int32" DbType="Int" />
-    <Parameter Name="fecha_entrada" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="fecha_salida" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="id_reserva_out" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_Reserva_Detalle" Method="sp_Reserva_Detalle">
-    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_Reserva_DetalleResult">
-      <Column Name="id_reserva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Cliente" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
-      <Column Name="Habitacion" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="tipo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="precio_por_noche" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_entrada" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_salida" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="Noches" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="estado" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_Reserva_Eliminar" Method="sp_Reserva_Eliminar">
-    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.sp_Reserva_Listar" Method="sp_Reserva_Listar">
-    <ElementType Name="sp_Reserva_ListarResult">
-      <Column Name="id_reserva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Cliente" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
-      <Column Name="Habitacion" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_entrada" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_salida" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="estado" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_Reserva_ListarPorEstado" Method="sp_Reserva_ListarPorEstado">
-    <Parameter Name="estado" Type="System.String" DbType="NVarChar(20)" />
-    <ElementType Name="sp_Reserva_ListarPorEstadoResult">
-      <Column Name="id_reserva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Cliente" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
-      <Column Name="Habitacion" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_entrada" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_salida" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="estado" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_Reserva_ObtenerPorId" Method="sp_Reserva_ObtenerPorId">
-    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_Reserva_ObtenerPorIdResult">
-      <Column Name="id_reserva" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_habitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_entrada" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_salida" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="estado" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="fecha_creacion" Type="System.DateTime" DbType="DateTime2 NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>
