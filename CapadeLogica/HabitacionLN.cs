@@ -46,7 +46,10 @@ namespace CapadeLogica
             }
             return lista;
         }
-
+        public List<sp_Habitacion_DisponiblesResult> ListarDisponibles(DateTime? entrada, DateTime? salida, string tipo)
+        {
+            return HabitacionCD.ListarDisponibles(entrada, salida, tipo);
+        }
         // 2. Listar habitaciones disponibles por rango de fechas y/o tipo
         public List<Habitacion> ListarHabitacionesDisponibles(DateTime? entrada, DateTime? salida, string tipo)
         {

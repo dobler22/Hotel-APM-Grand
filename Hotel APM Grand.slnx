@@ -2,5 +2,6 @@
   <Project Path="CapadeDatos/CapadeDatos.csproj" Id="93d14488-63c7-4fd3-8305-11e4deda5346" />
   <Project Path="CapadeEntidades/CapadeEntidades.csproj" Id="0977a82f-8799-41f5-8956-2508c7a172cd" />
   <Project Path="CapadeLogica/CapadeLogica.csproj" Id="263c7ef7-7930-49b9-b0eb-735c734122d4" />
+  <Project Path="Hotel-APM-Grand Web/Hotel-APM-Grand Web.csproj" Id="286841ea-5395-4cb1-840b-108b94375d7b" />
   <Project Path="Presentacion/Presentacion.csproj" Id="d0640665-784a-4251-9da2-63b6c113be7d" />
 </Solution>

@@ -23,10 +23,9 @@ namespace CapadeLogica
                     us.Email = result.email;
                     us.Rol = result.rol;
                     us.Activo = result.activo;
-                    // us.NombreCompleto = result.NombreCompleto; // Si agregas la propiedad en tu entidad
                     return us;
                 }
-                return null; // Credenciales incorrectas o usuario inactivo (activo = 0)
+                return null; 
             }
             catch (Exception ex)
             {
