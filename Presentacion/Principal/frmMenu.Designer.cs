@@ -409,6 +409,7 @@
             this.btnMenu1.Size = new System.Drawing.Size(210, 45);
             this.btnMenu1.TabIndex = 3;
             this.btnMenu1.Tag = "1";
+            this.btnMenu1.Paint += new System.Windows.Forms.PaintEventHandler(this.btnMenu1_Paint);
             // 
             // textoMenu1
             // 
@@ -470,9 +471,9 @@
             this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(72)))), ((int)(((byte)(41)))));
             this.lblVersion.Location = new System.Drawing.Point(12, 39);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(42, 16);
+            this.lblVersion.Size = new System.Drawing.Size(41, 16);
             this.lblVersion.TabIndex = 1;
-            this.lblVersion.Text = "RAM";
+            this.lblVersion.Text = "APM";
             // 
             // lblTitulo
             // 
@@ -487,10 +488,13 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(254, 0);
+            this.panel1.AutoSize = true;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(248, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(546, 500);
+            this.panel1.Size = new System.Drawing.Size(552, 500);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // frmMenu
             // 
@@ -526,6 +530,7 @@
             this.btnMenu0.ResumeLayout(false);
             this.btnMenu0.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

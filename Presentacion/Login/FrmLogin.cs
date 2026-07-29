@@ -1,5 +1,6 @@
 ﻿using CapadeEntidades.Usuario;
 using CapadeLogica;
+using Presentacion.Principal;
 using Presentacion.Usuario;
 using System;
 using System.Collections.Generic;
@@ -64,9 +65,9 @@ namespace Presentacion.Login
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
 
-                    // 4. Abrir el formulario de administración de usuarios
-                    frmAdminUsuario adminForm = new frmAdminUsuario(usuarioEncontrado);
-                    adminForm.Show();
+                    // 4. Abrir el menú principal
+                    frmMenu menuForm = new frmMenu();
+                    menuForm.Show();
 
                     // Ocultar el login
                     this.Hide();
