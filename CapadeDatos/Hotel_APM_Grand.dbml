@@ -1,5 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="base de datos 2" Class="Hotel_APM_GrandDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-CF2J6U8;Initial Catalog=&quot;base de datos 2&quot;;Persist Security Info=True;User ID=sa;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="CapadeDatos.Properties.Settings" SettingsPropertyName="base_de_datos_2ConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Base_Datos_Hotel_APM_Grand" Class="Hotel_APM_GrandDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-23BPHEQS;Initial Catalog=Base_Datos_Hotel_APM_Grand;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="CapadeDatos.Properties.Settings" SettingsPropertyName="Base_Datos_Hotel_APM_GrandConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Album" Member="Album">
+    <Type Name="Album">
+      <Column Name="id_album" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_grupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="titulo" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="anio_lanzamiento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numero_pistas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Album_Cancion" Member="Cancion" ThisKey="id_album" OtherKey="id_album" Type="Cancion" />
+      <Association Name="Grupo_Album" Member="Grupo" ThisKey="id_grupo" OtherKey="id_grupo" Type="Grupo" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Cancelaciones" Member="Cancelaciones">
     <Type Name="Cancelaciones">
       <Column Name="id_cancelacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -10,6 +21,16 @@
       <Column Name="reembolso" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="solicitado_por" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
       <Association Name="Reservas_Cancelaciones" Member="Reservas" ThisKey="id_reserva" OtherKey="id_reserva" Type="Reservas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cancion" Member="Cancion">
+    <Type Name="Cancion">
+      <Column Name="id_cancion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_album" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="titulo" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="duracion_segundos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="genero" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Album_Cancion" Member="Album" ThisKey="id_album" OtherKey="id_album" Type="Album" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Clientes" Member="Clientes">
@@ -25,6 +46,28 @@
       <Association Name="Clientes_Resenas" Member="Resenas" ThisKey="id_cliente" OtherKey="id_cliente" Type="Resenas" />
       <Association Name="Clientes_Reservas" Member="Reservas" ThisKey="id_cliente" OtherKey="id_cliente" Type="Reservas" />
       <Association Name="Usuarios_Clientes" Member="Usuarios" ThisKey="id_usuario" OtherKey="id_usuario" Type="Usuarios" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Concierto" Member="Concierto">
+    <Type Name="Concierto">
+      <Column Name="id_concierto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_grupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lugar" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_concierto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="precio_entrada" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Association Name="Grupo_Concierto" Member="Grupo" ThisKey="id_grupo" OtherKey="id_grupo" Type="Grupo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Grupo" Member="Grupo">
+    <Type Name="Grupo">
+      <Column Name="id_grupo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre_grupo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="genero_principal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="anio_fundacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pais_origen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Grupo_Album" Member="Album" ThisKey="id_grupo" OtherKey="id_grupo" Type="Album" />
+      <Association Name="Grupo_Concierto" Member="Concierto" ThisKey="id_grupo" OtherKey="id_grupo" Type="Concierto" />
+      <Association Name="Grupo_Integrante" Member="Integrante" ThisKey="id_grupo" OtherKey="id_grupo" Type="Integrante" />
     </Type>
   </Table>
   <Table Name="dbo.Empleados" Member="Empleados">
@@ -66,6 +109,17 @@
       <Association Name="Habitaciones_Reservas" Member="Reservas" ThisKey="id_habitacion" OtherKey="id_habitacion" Type="Reservas" />
     </Type>
   </Table>
+  <Table Name="dbo.Integrante" Member="Integrante">
+    <Type Name="Integrante">
+      <Column Name="id_integrante" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_grupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombres" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidos" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="instrumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecha_nacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Grupo_Integrante" Member="Grupo" ThisKey="id_grupo" OtherKey="id_grupo" Type="Grupo" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Mantenimiento" Member="Mantenimiento">
     <Type Name="Mantenimiento">
       <Column Name="id_mantenimiento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -104,6 +158,16 @@
       <Association Name="Reservas_Resenas" Member="Reservas" ThisKey="id_reserva" OtherKey="id_reserva" Type="Reservas" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Servicios" Member="Servicios">
+    <Type Name="Servicios">
+      <Column Name="id_servicio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="precio" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="disponible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Servicios_ServiciosReserva" Member="ServiciosReserva" ThisKey="id_servicio" OtherKey="id_servicio" Type="ServiciosReserva" />
+    </Type>
+  </Table>
   <Table Name="dbo.Reservas" Member="Reservas">
     <Type Name="Reservas">
       <Column Name="id_reserva" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -120,16 +184,6 @@
       <Association Name="Reservas_ServiciosReserva" Member="ServiciosReserva" ThisKey="id_reserva" OtherKey="id_reserva" Type="ServiciosReserva" />
       <Association Name="Clientes_Reservas" Member="Clientes" ThisKey="id_cliente" OtherKey="id_cliente" Type="Clientes" IsForeignKey="true" />
       <Association Name="Habitaciones_Reservas" Member="Habitaciones" ThisKey="id_habitacion" OtherKey="id_habitacion" Type="Habitaciones" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Servicios" Member="Servicios">
-    <Type Name="Servicios">
-      <Column Name="id_servicio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nombre" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="descripcion" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="precio" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="disponible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="Servicios_ServiciosReserva" Member="ServiciosReserva" ThisKey="id_servicio" OtherKey="id_servicio" Type="ServiciosReserva" />
     </Type>
   </Table>
   <Table Name="dbo.ServiciosReserva" Member="ServiciosReserva">
@@ -181,17 +235,6 @@
       <Column Name="Estado" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.vw_Empleados" Member="vw_Empleados">
-    <Type Name="vw_Empleados">
-      <Column Name="NombreCompleto" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
-      <Column Name="Cargo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Area" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Telefono" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="FechaIngreso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Correo" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Estado" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.vw_Facturas" Member="vw_Facturas">
     <Type Name="vw_Facturas">
       <Column Name="IdFactura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -205,6 +248,17 @@
       <Column Name="Total" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="Estado" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
       <Column Name="FechaEmision" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_Empleados" Member="vw_Empleados">
+    <Type Name="vw_Empleados">
+      <Column Name="NombreCompleto" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="Cargo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.vw_Habitaciones" Member="vw_Habitaciones">
@@ -316,6 +370,14 @@
     <Parameter Name="reembolso" Type="System.Decimal" DbType="Money" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.sp_Cancelacion_Registrar" Method="sp_Cancelacion_Registrar">
+    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
+    <Parameter Name="motivo" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="penalizacion" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="reembolso" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="solicitado_por" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.sp_Cancelacion_Eliminar" Method="sp_Cancelacion_Eliminar">
     <Parameter Name="id_cancelacion" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
@@ -345,14 +407,6 @@
       <Column Name="reembolso" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="solicitado_por" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.sp_Cancelacion_Registrar" Method="sp_Cancelacion_Registrar">
-    <Parameter Name="id_reserva" Type="System.Int32" DbType="Int" />
-    <Parameter Name="motivo" Type="System.String" DbType="NVarChar(MAX)" />
-    <Parameter Name="penalizacion" Type="System.Decimal" DbType="Money" />
-    <Parameter Name="reembolso" Type="System.Decimal" DbType="Money" />
-    <Parameter Name="solicitado_por" Type="System.String" DbType="NVarChar(20)" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_Cliente_Actualizar" Method="sp_Cliente_Actualizar">
     <Parameter Name="id_cliente" Type="System.Int32" DbType="Int" />
