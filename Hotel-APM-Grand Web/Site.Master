@@ -1,5 +1,9 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Presentacion.SiteMaster" %><!DOCTYPE html><html lang="es"><head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Presentacion.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Hotel APM Grand</title>
@@ -8,11 +12,13 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    
+
     <!-- CDN FontAwesome para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></head><body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -39,8 +45,8 @@
                 </a>
 
                 <!-- Botón de Menú para Celulares (Hamburguesa) -->
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
-                        title="Alternar navegación" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    title="Alternar navegación" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -51,7 +57,7 @@
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/">Inicio</a>
                         </li>
-                        
+
                         <!-- Opción dinámicamente visible SOLO para clientes autenticados -->
                         <li class="nav-item" id="liMisReservas" runat="server" visible="false">
                             <a class="nav-link text-warning fw-semibold" runat="server" href="~/frmHistorialCliente.aspx">
@@ -59,9 +65,11 @@
                             </a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">Acerca de</a></li>
-                        <!-- RUTA DE CONTACTO CORREGIDA -->
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contacto.aspx">Contacto</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/About.aspx">
+                                <i class="fas fa-info-circle me-1"></i>Acerca de
+    </a>
+                        </li>
                     </ul>
 
                     <!-- Sección Login / Datos de Usuario (Esquina Derecha) -->
@@ -101,4 +109,6 @@
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    </asp:PlaceHolder></body></html>
+    </asp:PlaceHolder>
+</body>
+</html>
