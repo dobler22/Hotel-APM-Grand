@@ -368,3 +368,4 @@ FodyWeavers.xsd
 *.dbml
 *.dbml.layout
 Hotel_APM_Grand.designer.cs
+/CapadeDatos/Hotel_APM_Grand.cs
