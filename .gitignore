@@ -361,3 +361,19 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# ==========================================
+# Archivos locales de LINQ to SQL y modelos
+# ==========================================
+*.dbml
+*.dbml.layout
+Hotel_APM_Grand.designer.cs
+/CapadeDatos/Hotel_APM_Grand.cs
+FodyWeavers.xsd
+# ==========================================
+# Archivos locales de LINQ to SQL y modelos
+# ==========================================
+*.dbml
+*.dbml.layout
+Hotel_APM_Grand.designer.cs
+/Hotel-APM-Grand Web/Hotel-APM-Grand Web.csproj
