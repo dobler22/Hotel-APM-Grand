@@ -367,3 +367,4 @@ FodyWeavers.xsd
 *.dbml
 *.dbml.layout
 Hotel_APM_Grand.designer.cs
+/Hotel-APM-Grand Web/Hotel-APM-Grand Web.csproj
