@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,11 @@ namespace Presentacion.Principal
         private void frmMenuPrinicpal_Load(object sender, EventArgs e)
         {
             CargarTarjetaReservas();
+            CargarTarjetaClientes();
+            CargarTarjetaEmpleados();
 
+            // Carga y renderizado del gráfico de barras RDLC
+            CargarReporteGrafico();
         }
         private void CargarTarjetaReservas()
         {
@@ -52,6 +57,83 @@ namespace Presentacion.Principal
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar datos de Reservas: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void CargarTarjetaClientes()
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(conexionString))
+                {
+                    conexion.Open();
+
+                    // 1. Obtener el Total General de Clientes
+                    string queryTotal = "SELECT COUNT(*) FROM Clientes";
+                    using (SqlCommand cmdTotal = new SqlCommand(queryTotal, conexion))
+                    {
+                        int totalClientes = Convert.ToInt32(cmdTotal.ExecuteScalar());
+                        lblClientesTotal.Text = totalClientes.ToString(); // Asigna aquí el ID de tu Label
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos de Clientes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void CargarTarjetaEmpleados()
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(conexionString))
+                {
+                    conexion.Open();
+
+                    // 1. Obtener el Total General de Empleados
+                    string queryTotal = "SELECT COUNT(*) FROM Empleados";
+                    using (SqlCommand cmdTotal = new SqlCommand(queryTotal, conexion))
+                    {
+                        int totalEmpleados = Convert.ToInt32(cmdTotal.ExecuteScalar());
+                        lblTotalEmpleados.Text = totalEmpleados.ToString(); // Asigna aquí el ID de tu Label
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos de Empleados: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void CargarReporteGrafico()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                using (SqlConnection conexion = new SqlConnection(conexionString))
+                {
+                    conexion.Open();
+                    string query = @"SELECT 
+                                UPPER(LEFT(DATENAME(MONTH, fecha_creacion), 1)) + LOWER(SUBSTRING(DATENAME(MONTH, fecha_creacion), 2, 10)) AS Mes,
+                                COUNT(*) AS TotalReservas
+                             FROM Reservas
+                             GROUP BY DATENAME(MONTH, fecha_creacion), MONTH(fecha_creacion)
+                             ORDER BY MONTH(fecha_creacion)";
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(query, conexion))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+
+                reportViewer1.LocalReport.DataSources.Clear();
+                ReportDataSource rds = new ReportDataSource("DataSet1", dt); // "DataSet1" debe coincidir con el nombre de DataSet dentro del archivo .rdlc
+                reportViewer1.LocalReport.ReportPath = @"Principal\rptReservasGrafico.rdlc";
+                reportViewer1.LocalReport.DataSources.Add(rds);
+                reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el gráfico: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

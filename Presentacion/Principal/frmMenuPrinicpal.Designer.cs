@@ -73,10 +73,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblNuevasReservas = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTotalReservas = new System.Windows.Forms.Label();
             this.lblTituloReservas = new System.Windows.Forms.Label();
-            this.lblNuevasReservas = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lblTotalEmpleados = new System.Windows.Forms.Label();
+            this.lblClientes = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblClientesTotal = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.btnMenu10.SuspendLayout();
@@ -93,6 +108,13 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,11 +128,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1492, 73);
+            this.panel1.Size = new System.Drawing.Size(1507, 90);
             this.panel1.TabIndex = 0;
             // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
@@ -119,9 +143,12 @@
             this.button4.Size = new System.Drawing.Size(68, 61);
             this.button4.TabIndex = 5;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
@@ -130,13 +157,16 @@
             this.button3.Size = new System.Drawing.Size(68, 61);
             this.button3.TabIndex = 4;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1415, 3);
+            this.button2.Location = new System.Drawing.Point(1436, 6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(68, 61);
             this.button2.TabIndex = 3;
@@ -179,9 +209,9 @@
             this.panel2.Controls.Add(this.btnMenu1);
             this.panel2.Controls.Add(this.btnMenu0);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 73);
+            this.panel2.Location = new System.Drawing.Point(0, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(265, 902);
+            this.panel2.Size = new System.Drawing.Size(265, 923);
             this.panel2.TabIndex = 1;
             // 
             // btnMenu10
@@ -584,13 +614,15 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(265, 73);
+            this.panel3.Location = new System.Drawing.Point(265, 90);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1227, 44);
+            this.panel3.Size = new System.Drawing.Size(1242, 44);
             this.panel3.TabIndex = 2;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(1076, 14);
@@ -612,71 +644,262 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(154)))), ((int)(((byte)(107)))));
-            this.panel4.Controls.Add(this.lblNuevasReservas);
             this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.lblNuevasReservas);
             this.panel4.Controls.Add(this.lblTotalReservas);
             this.panel4.Controls.Add(this.lblTituloReservas);
-            this.panel4.Location = new System.Drawing.Point(280, 135);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(10, 10);
+            this.panel4.Margin = new System.Windows.Forms.Padding(10);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(504, 309);
+            this.panel4.Size = new System.Drawing.Size(601, 316);
             this.panel4.TabIndex = 3;
+            // 
+            // lblNuevasReservas
+            // 
+            this.lblNuevasReservas.AutoSize = true;
+            this.lblNuevasReservas.BackColor = System.Drawing.Color.Transparent;
+            this.lblNuevasReservas.Font = new System.Drawing.Font("Baskerville Old Face", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevasReservas.ForeColor = System.Drawing.Color.White;
+            this.lblNuevasReservas.Location = new System.Drawing.Point(7, 255);
+            this.lblNuevasReservas.Name = "lblNuevasReservas";
+            this.lblNuevasReservas.Size = new System.Drawing.Size(364, 50);
+            this.lblNuevasReservas.TabIndex = 3;
+            this.lblNuevasReservas.Text = "0 Nuevas Reservas";
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(221, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(321, 18);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 271);
+            this.pictureBox1.Size = new System.Drawing.Size(266, 259);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // lblTotalReservas
             // 
             this.lblTotalReservas.AutoSize = true;
-            this.lblTotalReservas.Font = new System.Drawing.Font("Baskerville Old Face", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalReservas.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalReservas.ForeColor = System.Drawing.Color.White;
-            this.lblTotalReservas.Location = new System.Drawing.Point(14, 135);
+            this.lblTotalReservas.Location = new System.Drawing.Point(103, 137);
             this.lblTotalReservas.Name = "lblTotalReservas";
-            this.lblTotalReservas.Size = new System.Drawing.Size(24, 26);
+            this.lblTotalReservas.Size = new System.Drawing.Size(61, 69);
             this.lblTotalReservas.TabIndex = 1;
             this.lblTotalReservas.Text = "0";
             // 
             // lblTituloReservas
             // 
             this.lblTituloReservas.AutoSize = true;
-            this.lblTituloReservas.Font = new System.Drawing.Font("Baskerville Old Face", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloReservas.Font = new System.Drawing.Font("Baskerville Old Face", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloReservas.ForeColor = System.Drawing.Color.White;
-            this.lblTituloReservas.Location = new System.Drawing.Point(14, 16);
+            this.lblTituloReservas.Location = new System.Drawing.Point(7, 9);
             this.lblTituloReservas.Name = "lblTituloReservas";
-            this.lblTituloReservas.Size = new System.Drawing.Size(161, 26);
+            this.lblTituloReservas.Size = new System.Drawing.Size(293, 50);
             this.lblTituloReservas.TabIndex = 0;
             this.lblTituloReservas.Text = "Reservas Total";
             // 
-            // lblNuevasReservas
+            // panel5
             // 
-            this.lblNuevasReservas.AutoSize = true;
-            this.lblNuevasReservas.Font = new System.Drawing.Font("Baskerville Old Face", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevasReservas.ForeColor = System.Drawing.Color.White;
-            this.lblNuevasReservas.Location = new System.Drawing.Point(14, 261);
-            this.lblNuevasReservas.Name = "lblNuevasReservas";
-            this.lblNuevasReservas.Size = new System.Drawing.Size(198, 26);
-            this.lblNuevasReservas.TabIndex = 3;
-            this.lblNuevasReservas.Text = "0 Nuevas Reservas";
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(154)))), ((int)(((byte)(107)))));
+            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.pictureBox2);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(631, 10);
+            this.panel5.Margin = new System.Windows.Forms.Padding(10);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(601, 316);
+            this.panel5.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Baskerville Old Face", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(13, 255);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(357, 50);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "0 Nuevas Facturas";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(352, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(235, 271);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(149, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 69);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Baskerville Old Face", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(13, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(324, 50);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Facturas Totales";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(335, 33);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(266, 252);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // lblTotalEmpleados
+            // 
+            this.lblTotalEmpleados.AutoSize = true;
+            this.lblTotalEmpleados.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalEmpleados.ForeColor = System.Drawing.Color.White;
+            this.lblTotalEmpleados.Location = new System.Drawing.Point(103, 120);
+            this.lblTotalEmpleados.Name = "lblTotalEmpleados";
+            this.lblTotalEmpleados.Size = new System.Drawing.Size(61, 69);
+            this.lblTotalEmpleados.TabIndex = 1;
+            this.lblTotalEmpleados.Text = "0";
+            // 
+            // lblClientes
+            // 
+            this.lblClientes.AutoSize = true;
+            this.lblClientes.Font = new System.Drawing.Font("Baskerville Old Face", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientes.ForeColor = System.Drawing.Color.White;
+            this.lblClientes.Location = new System.Drawing.Point(14, 19);
+            this.lblClientes.Name = "lblClientes";
+            this.lblClientes.Size = new System.Drawing.Size(358, 50);
+            this.lblClientes.TabIndex = 0;
+            this.lblClientes.Text = "Empleados Grand";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.panel6.Controls.Add(this.pictureBox3);
+            this.panel6.Controls.Add(this.lblTotalEmpleados);
+            this.panel6.Controls.Add(this.lblClientes);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(10, 346);
+            this.panel6.Margin = new System.Windows.Forms.Padding(10);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(601, 308);
+            this.panel6.TabIndex = 4;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(335, -24);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(266, 255);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // lblClientesTotal
+            // 
+            this.lblClientesTotal.AutoSize = true;
+            this.lblClientesTotal.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientesTotal.ForeColor = System.Drawing.Color.White;
+            this.lblClientesTotal.Location = new System.Drawing.Point(103, 72);
+            this.lblClientesTotal.Name = "lblClientesTotal";
+            this.lblClientesTotal.Size = new System.Drawing.Size(61, 69);
+            this.lblClientesTotal.TabIndex = 1;
+            this.lblClientesTotal.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Baskerville Old Face", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(14, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(301, 50);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Clientes Grand";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(93)))), ((int)(((byte)(59)))));
+            this.panel7.Controls.Add(this.pictureBox4);
+            this.panel7.Controls.Add(this.lblClientesTotal);
+            this.panel7.Controls.Add(this.label8);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(10, 674);
+            this.panel7.Margin = new System.Windows.Forms.Padding(10);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(601, 195);
+            this.panel7.TabIndex = 5;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(631, 346);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(10);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(601, 308);
+            this.reportViewer1.TabIndex = 6;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.reportViewer1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel7, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(265, 134);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.24138F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.40105F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.35757F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1242, 879);
+            this.tableLayoutPanel1.TabIndex = 14;
             // 
             // frmMenuPrinicpal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1492, 975);
-            this.Controls.Add(this.panel4);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1507, 1013);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "frmMenuPrinicpal";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenuPrinicpal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMenuPrinicpal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -708,6 +931,16 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -762,5 +995,20 @@
         private System.Windows.Forms.Label lblTotalReservas;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblNuevasReservas;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label lblTotalEmpleados;
+        private System.Windows.Forms.Label lblClientes;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lblClientesTotal;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel7;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

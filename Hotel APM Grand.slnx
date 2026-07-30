@@ -2,27 +2,5 @@
   <Project Path="CapadeDatos/CapadeDatos.csproj" Id="93d14488-63c7-4fd3-8305-11e4deda5346" />
   <Project Path="CapadeEntidades/CapadeEntidades.csproj" Id="0977a82f-8799-41f5-8956-2508c7a172cd" />
   <Project Path="CapadeLogica/CapadeLogica.csproj" Id="263c7ef7-7930-49b9-b0eb-735c734122d4" />
-  <Project Path="Hotel-APM-Grand Web/" Type="Website" DisplayName="Hotel-APM-Grand Web(1)">
-    <BuildType Project="Debug" />
-    <Build Project="false" />
-    <Properties Name="WebsiteProperties">
-      <Property Name="Debug.AspNetCompiler.Debug" Value="&quot;True&quot;" />
-      <Property Name="Debug.AspNetCompiler.FixedNames" Value="&quot;false&quot;" />
-      <Property Name="Debug.AspNetCompiler.ForceOverwrite" Value="&quot;true&quot;" />
-      <Property Name="Debug.AspNetCompiler.PhysicalPath" Value="&quot;Hotel-APM-Grand Web\&quot;" />
-      <Property Name="Debug.AspNetCompiler.TargetPath" Value="&quot;PrecompiledWeb\localhost_54759\&quot;" />
-      <Property Name="Debug.AspNetCompiler.Updateable" Value="&quot;true&quot;" />
-      <Property Name="Debug.AspNetCompiler.VirtualPath" Value="&quot;/localhost_54759&quot;" />
-      <Property Name="Release.AspNetCompiler.Debug" Value="&quot;False&quot;" />
-      <Property Name="Release.AspNetCompiler.FixedNames" Value="&quot;false&quot;" />
-      <Property Name="Release.AspNetCompiler.ForceOverwrite" Value="&quot;true&quot;" />
-      <Property Name="Release.AspNetCompiler.PhysicalPath" Value="&quot;Hotel-APM-Grand Web\&quot;" />
-      <Property Name="Release.AspNetCompiler.TargetPath" Value="&quot;PrecompiledWeb\localhost_54759\&quot;" />
-      <Property Name="Release.AspNetCompiler.Updateable" Value="&quot;true&quot;" />
-      <Property Name="Release.AspNetCompiler.VirtualPath" Value="&quot;/localhost_54759&quot;" />
-      <Property Name="TargetFrameworkMoniker" Value="&quot;.NETFramework,Version%3Dv4.7.2&quot;" />
-      <Property Name="VWDPort" Value="&quot;54759&quot;" />
-    </Properties>
-  </Project>
   <Project Path="Presentacion/Presentacion.csproj" Id="d0640665-784a-4251-9da2-63b6c113be7d" />
 </Solution>
