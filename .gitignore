@@ -377,3 +377,12 @@ FodyWeavers.xsd
 *.dbml.layout
 Hotel_APM_Grand.designer.cs
 /Hotel-APM-Grand Web/Hotel-APM-Grand Web.csproj
+
+# Resultados de compilación
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/

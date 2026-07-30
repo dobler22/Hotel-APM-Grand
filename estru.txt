@@ -1,0 +1,992 @@
+Listado de rutas de carpetas
+El n£mero de serie del volumen es D02E-61D5
+C:.
+|   .gitattributes
+|   .gitignore
+|   estru.txt
+|   Hotel APM Grand.slnx
+|   README.md
+|   Vista Presentacion.pdf
+|   
++---CapadeDatos
+|   |   app.config
+|   |   CancelacionCD.cs
+|   |   CapadeDatos.csproj
+|   |   ClienteCD.cs
+|   |   DashboardCD.cs
+|   |   DatosExcepciones.cs
+|   |   EmpleadoCD.cs
+|   |   FacturaCD.cs
+|   |   HabitacionCD.cs
+|   |   Hotel_APM_Grand.cs
+|   |   Hotel_APM_Grand.dbml
+|   |   Hotel_APM_Grand.dbml.layout
+|   |   Hotel_APM_Grand.designer.cs
+|   |   MantenimientoCD.cs
+|   |   PagoCD.cs
+|   |   ResenaCD.cs
+|   |   ReservaCD.cs
+|   |   ServicioCD.cs
+|   |   ServicioReservaCD.cs
+|   |   UsuarioCD.cs
+|   |   
+|   +---bin
+|   |   +---Debug
+|   |   |       CapadeDatos.dll
+|   |   |       CapadeDatos.dll.config
+|   |   |       CapadeDatos.pdb
+|   |   |       
+|   |   \---Release
+|   +---obj
+|   |   +---Debug
+|   |   |   |   .NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+|   |   |   |   CapadeDatos.csproj.AssemblyReference.cache
+|   |   |   |   CapadeDatos.csproj.CoreCompileInputs.cache
+|   |   |   |   CapadeDatos.csproj.FileListAbsolute.txt
+|   |   |   |   CapadeDatos.dll
+|   |   |   |   CapadeDatos.pdb
+|   |   |   |   DesignTimeResolveAssemblyReferences.cache
+|   |   |   |   DesignTimeResolveAssemblyReferencesInput.cache
+|   |   |   |   
+|   |   |   \---TempPE
+|   |   |           Hotel_APM_Grand.designer.cs.dll
+|   |   |           
+|   |   \---Release
+|   |           .NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+|   |           CapadeDatos.csproj.AssemblyReference.cache
+|   |           
+|   \---Properties
+|           AssemblyInfo.cs
+|           Settings.Designer.cs
+|           Settings.settings
+|           
++---CapadeEntidades
+|   |   CapadeEntidades.csproj
+|   |   Class1.cs
+|   |   DashboardDTO.cs
+|   |   
+|   +---bin
+|   |   +---Debug
+|   |   |       CapadeEntidades.dll
+|   |   |       CapadeEntidades.pdb
+|   |   |       
+|   |   \---Release
+|   +---Cancelacion
+|   |       Cancelacion.cs
+|   |       VwCancelacion.cs
+|   |       
+|   +---Cliente
+|   |       Cliente.cs
+|   |       VwCliente.cs
+|   |       
+|   +---Empleado
+|   |       Empleado.cs
+|   |       VwEmpleado.cs
+|   |       
+|   +---Factura
+|   |       Factura.cs
+|   |       VwFactura.cs
+|   |       
+|   +---Habitacion
+|   |       Habitacion.cs
+|   |       VwHabitacion.cs
+|   |       VwHabitacionDisponible.cs
+|   |       
+|   +---Mantenimiento
+|   |       Mantenimiento.cs
+|   |       VwMantenimiento.cs
+|   |       
+|   +---obj
+|   |   +---Debug
+|   |   |   |   .NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+|   |   |   |   CapadeEntidades.csproj.AssemblyReference.cache
+|   |   |   |   CapadeEntidades.csproj.CoreCompileInputs.cache
+|   |   |   |   CapadeEntidades.csproj.FileListAbsolute.txt
+|   |   |   |   CapadeEntidades.dll
+|   |   |   |   CapadeEntidades.pdb
+|   |   |   |   DesignTimeResolveAssemblyReferencesInput.cache
+|   |   |   |   
+|   |   |   \---TempPE
+|   |   \---Release
+|   |           .NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+|   |           CapadeEntidades.csproj.AssemblyReference.cache
+|   |           
+|   +---Pago
+|   |       Pago.cs
+|   |       VwPago.cs
+|   |       
+|   +---Properties
+|   |       AssemblyInfo.cs
+|   |       
+|   +---Resena
+|   |       Resena.cs
+|   |       VwResena.cs
+|   |       
+|   +---Reserva
+|   |       Reserva.cs
+|   |       VwReservaActiva.cs
+|   |       VwReservaHistorial.cs
+|   |       
+|   +---Servicio
+|   |       Servicio.cs
+|   |       VwServicio.cs
+|   |       
+|   +---ServicioReserva
+|   |       ServicioReserva.cs
+|   |       VwServicioPorReserva.cs
+|   |       
+|   \---Usuario
+|           Usuario.cs
+|           
++---CapadeLogica
+|   |   CancelacionLN.cs
+|   |   CapadeLogica.csproj
+|   |   Class1.cs
+|   |   ClienteLN.cs
+|   |   DashboardLN.cs
+|   |   EmpleadoLN.cs
+|   |   HabitacionLN.cs
+|   |   LogicaExcepciones.cs
+|   |   MantenimientoLN.cs
+|   |   PagoLN.cs
+|   |   ResenaLN.cs
+|   |   ReservaLN.cs
+|   |   ServicioLN.cs
+|   |   ServicioReservaLN.cs
+|   |   UsuarioLN.cs
+|   |   
+|   +---bin
+|   |   +---Debug
+|   |   |       CapadeDatos.dll
+|   |   |       CapadeDatos.dll.config
+|   |   |       CapadeDatos.pdb
+|   |   |       CapadeEntidades.dll
+|   |   |       CapadeEntidades.pdb
+|   |   |       CapadeLogica.dll
+|   |   |       CapadeLogica.pdb
+|   |   |       
+|   |   \---Release
+|   +---obj
+|   |   +---Debug
+|   |   |   |   .NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+|   |   |   |   CapadeLo.6F2777B9.Up2Date
+|   |   |   |   CapadeLogica.csproj.AssemblyReference.cache
+|   |   |   |   CapadeLogica.csproj.CoreCompileInputs.cache
+|   |   |   |   CapadeLogica.csproj.FileListAbsolute.txt
+|   |   |   |   CapadeLogica.dll
+|   |   |   |   CapadeLogica.pdb
+|   |   |   |   DesignTimeResolveAssemblyReferencesInput.cache
+|   |   |   |   
+|   |   |   \---TempPE
+|   |   \---Release
+|   |           .NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+|   |           CapadeLogica.csproj.AssemblyReference.cache
+|   |           
+|   \---Properties
+|           AssemblyInfo.cs
+|           
++---Hotel-APM-Grand Web
+|   |   About.aspx
+|   |   About.aspx.cs
+|   |   Bundle.config
+|   |   Contacto.aspx
+|   |   Contacto.aspx.cs
+|   |   Contacto.aspx.designer.cs
+|   |   Default.aspx
+|   |   Default.aspx.cs
+|   |   Default.aspx.designer.cs
+|   |   favicon.ico
+|   |   frmHistorialCliente.aspx
+|   |   frmHistorialCliente.aspx.cs
+|   |   frmHistorialCliente.aspx.designer.cs
+|   |   frmReservas.aspx
+|   |   frmReservas.aspx.cs
+|   |   frmReservas.aspx.designer.cs
+|   |   Global.asax
+|   |   Global.asax.cs
+|   |   Hotel-APM-Grand Web.csproj.user
+|   |   Login.aspx
+|   |   Login.aspx.cs
+|   |   Login.aspx.designer.cs
+|   |   packages.config
+|   |   Registro.aspx
+|   |   Registro.aspx.cs
+|   |   Registro.aspx.designer.cs
+|   |   Site.Master
+|   |   Site.Master.cs
+|   |   Site.Master.designer.cs
+|   |   Site.Mobile.Master
+|   |   Site.Mobile.Master.cs
+|   |   Site.Mobile.Master.designer.cs
+|   |   ViewSwitcher.ascx
+|   |   ViewSwitcher.ascx.cs
+|   |   ViewSwitcher.ascx.designer.cs
+|   |   Web.config
+|   |   Web.Debug.config
+|   |   Web.Release.config
+|   |   
+|   +---App_Start
+|   |       BundleConfig.cs
+|   |       RouteConfig.cs
+|   |       
+|   +---Assests
+|   |       Anthony_Samuel_Quishpe_Alvarado.jpeg
+|   |       Sleyder_Dario_Moreno_Crespo.jpeg
+|   |       
+|   +---bin
+|   |   |   Antlr3.Runtime.dll
+|   |   |   Antlr3.Runtime.pdb
+|   |   |   CapadeDatos.dll
+|   |   |   CapadeDatos.dll.config
+|   |   |   CapadeDatos.pdb
+|   |   |   CapadeEntidades.dll
+|   |   |   CapadeEntidades.pdb
+|   |   |   CapadeLogica.dll
+|   |   |   CapadeLogica.pdb
+|   |   |   Hotel-APM-Grand Web.dll
+|   |   |   Hotel-APM-Grand Web.dll.config
+|   |   |   Hotel-APM-Grand Web.pdb
+|   |   |   Microsoft.AspNet.FriendlyUrls.dll
+|   |   |   Microsoft.AspNet.FriendlyUrls.xml
+|   |   |   Microsoft.AspNet.Web.Optimization.WebForms.dll
+|   |   |   Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+|   |   |   Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+|   |   |   Microsoft.ScriptManager.MSAjax.dll
+|   |   |   Microsoft.ScriptManager.WebForms.dll
+|   |   |   Microsoft.Web.Infrastructure.dll
+|   |   |   Newtonsoft.Json.dll
+|   |   |   Newtonsoft.Json.xml
+|   |   |   System.Web.Optimization.dll
+|   |   |   System.Web.Optimization.xml
+|   |   |   WebGrease.dll
+|   |   |   
+|   |   +---es
+|   |   |       Microsoft.AspNet.FriendlyUrls.resources.dll
+|   |   |       System.Web.Optimization.resources.dll
+|   |   |       
+|   |   \---roslyn
+|   |           csc.exe
+|   |           csc.exe.config
+|   |           csc.rsp
+|   |           csi.exe
+|   |           csi.exe.config
+|   |           csi.rsp
+|   |           Microsoft.Build.Tasks.CodeAnalysis.dll
+|   |           Microsoft.CodeAnalysis.CSharp.dll
+|   |           Microsoft.CodeAnalysis.CSharp.Scripting.dll
+|   |           Microsoft.CodeAnalysis.dll
+|   |           Microsoft.CodeAnalysis.Scripting.dll
+|   |           Microsoft.CodeAnalysis.VisualBasic.dll
+|   |           Microsoft.CSharp.Core.targets
+|   |           Microsoft.DiaSymReader.Native.amd64.dll
+|   |           Microsoft.DiaSymReader.Native.x86.dll
+|   |           Microsoft.Managed.Core.targets
+|   |           Microsoft.VisualBasic.Core.targets
+|   |           Microsoft.Win32.Primitives.dll
+|   |           System.AppContext.dll
+|   |           System.Collections.Immutable.dll
+|   |           System.Console.dll
+|   |           System.Diagnostics.DiagnosticSource.dll
+|   |           System.Diagnostics.FileVersionInfo.dll
+|   |           System.Diagnostics.StackTrace.dll
+|   |           System.Globalization.Calendars.dll
+|   |           System.IO.Compression.dll
+|   |           System.IO.Compression.ZipFile.dll
+|   |           System.IO.FileSystem.dll
+|   |           System.IO.FileSystem.Primitives.dll
+|   |           System.Net.Http.dll
+|   |           System.Net.Sockets.dll
+|   |           System.Reflection.Metadata.dll
+|   |           System.Runtime.InteropServices.RuntimeInformation.dll
+|   |           System.Security.Cryptography.Algorithms.dll
+|   |           System.Security.Cryptography.Encoding.dll
+|   |           System.Security.Cryptography.Primitives.dll
+|   |           System.Security.Cryptography.X509Certificates.dll
+|   |           System.Text.Encoding.CodePages.dll
+|   |           System.Threading.Tasks.Extensions.dll
+|   |           System.ValueTuple.dll
+|   |           System.Xml.ReaderWriter.dll
+|   |           System.Xml.XmlDocument.dll
+|   |           System.Xml.XPath.dll
+|   |           System.Xml.XPath.XDocument.dll
+|   |           vbc.exe
+|   |           vbc.exe.config
+|   |           vbc.rsp
+|   |           VBCSCompiler.exe
+|   |           VBCSCompiler.exe.config
+|   |           
+|   +---Content
+|   |       bootstrap-grid.css
+|   |       bootstrap-grid.css.map
+|   |       bootstrap-grid.min.css
+|   |       bootstrap-grid.min.css.map
+|   |       bootstrap-grid.rtl.css
+|   |       bootstrap-grid.rtl.css.map
+|   |       bootstrap-grid.rtl.min.css
+|   |       bootstrap-grid.rtl.min.css.map
+|   |       bootstrap-reboot.css
+|   |       bootstrap-reboot.css.map
+|   |       bootstrap-reboot.min.css
+|   |       bootstrap-reboot.min.css.map
+|   |       bootstrap-reboot.rtl.css
+|   |       bootstrap-reboot.rtl.css.map
+|   |       bootstrap-reboot.rtl.min.css
+|   |       bootstrap-reboot.rtl.min.css.map
+|   |       bootstrap-utilities.css
+|   |       bootstrap-utilities.css.map
+|   |       bootstrap-utilities.min.css
+|   |       bootstrap-utilities.min.css.map
+|   |       bootstrap-utilities.rtl.css
+|   |       bootstrap-utilities.rtl.css.map
+|   |       bootstrap-utilities.rtl.min.css
+|   |       bootstrap-utilities.rtl.min.css.map
+|   |       bootstrap.css
+|   |       bootstrap.css.map
+|   |       bootstrap.min.css
+|   |       bootstrap.min.css.map
+|   |       bootstrap.rtl.css
+|   |       bootstrap.rtl.css.map
+|   |       bootstrap.rtl.min.css
+|   |       bootstrap.rtl.min.css.map
+|   |       Site.css
+|   |       
+|   +---obj
+|   |   \---Debug
+|   |       |   .NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+|   |       |   DesignTimeResolveAssemblyReferences.cache
+|   |       |   DesignTimeResolveAssemblyReferencesInput.cache
+|   |       |   Hotel-AP.1FBD815A.Up2Date
+|   |       |   Hotel-APM-Grand Web.csproj.AssemblyReference.cache
+|   |       |   Hotel-APM-Grand Web.csproj.CoreCompileInputs.cache
+|   |       |   Hotel-APM-Grand Web.csproj.FileListAbsolute.txt
+|   |       |   Hotel-APM-Grand Web.dll
+|   |       |   Hotel-APM-Grand Web.pdb
+|   |       |   
+|   |       \---TempPE
+|   +---Properties
+|   |       AssemblyInfo.cs
+|   |       
+|   \---Scripts
+|       |   bootstrap.bundle.js
+|       |   bootstrap.bundle.js.map
+|       |   bootstrap.bundle.min.js
+|       |   bootstrap.bundle.min.js.map
+|       |   bootstrap.esm.js
+|       |   bootstrap.esm.js.map
+|       |   bootstrap.esm.min.js
+|       |   bootstrap.esm.min.js.map
+|       |   bootstrap.js
+|       |   bootstrap.js.map
+|       |   bootstrap.min.js
+|       |   bootstrap.min.js.map
+|       |   jquery-3.7.0.intellisense.js
+|       |   jquery-3.7.0.js
+|       |   jquery-3.7.0.min.js
+|       |   jquery-3.7.0.min.map
+|       |   jquery-3.7.0.slim.js
+|       |   jquery-3.7.0.slim.min.js
+|       |   jquery-3.7.0.slim.min.map
+|       |   modernizr-2.8.3.js
+|       |   
+|       \---WebForms
+|           |   DetailsView.js
+|           |   Focus.js
+|           |   GridView.js
+|           |   Menu.js
+|           |   MenuStandards.js
+|           |   SmartNav.js
+|           |   TreeView.js
+|           |   WebForms.js
+|           |   WebParts.js
+|           |   WebUIValidation.js
+|           |   
+|           \---MSAjax
+|                   MicrosoftAjax.js
+|                   MicrosoftAjaxApplicationServices.js
+|                   MicrosoftAjaxComponentModel.js
+|                   MicrosoftAjaxCore.js
+|                   MicrosoftAjaxGlobalization.js
+|                   MicrosoftAjaxHistory.js
+|                   MicrosoftAjaxNetwork.js
+|                   MicrosoftAjaxSerialization.js
+|                   MicrosoftAjaxTimer.js
+|                   MicrosoftAjaxWebForms.js
+|                   MicrosoftAjaxWebServices.js
+|                   
++---packages
+|   +---Antlr.3.5.0.2
+|   |   |   .signature.p7s
+|   |   |   Antlr.3.5.0.2.nupkg
+|   |   |   
+|   |   \---lib
+|   |           Antlr3.Runtime.dll
+|   |           Antlr3.Runtime.pdb
+|   |           
+|   +---bootstrap.5.2.3
+|   |   |   .signature.p7s
+|   |   |   bootstrap.5.2.3.nupkg
+|   |   |   bootstrap.png
+|   |   |   
+|   |   +---content
+|   |   |   +---Content
+|   |   |   |       bootstrap-grid.css
+|   |   |   |       bootstrap-grid.css.map
+|   |   |   |       bootstrap-grid.min.css
+|   |   |   |       bootstrap-grid.min.css.map
+|   |   |   |       bootstrap-grid.rtl.css
+|   |   |   |       bootstrap-grid.rtl.css.map
+|   |   |   |       bootstrap-grid.rtl.min.css
+|   |   |   |       bootstrap-grid.rtl.min.css.map
+|   |   |   |       bootstrap-reboot.css
+|   |   |   |       bootstrap-reboot.css.map
+|   |   |   |       bootstrap-reboot.min.css
+|   |   |   |       bootstrap-reboot.min.css.map
+|   |   |   |       bootstrap-reboot.rtl.css
+|   |   |   |       bootstrap-reboot.rtl.css.map
+|   |   |   |       bootstrap-reboot.rtl.min.css
+|   |   |   |       bootstrap-reboot.rtl.min.css.map
+|   |   |   |       bootstrap-utilities.css
+|   |   |   |       bootstrap-utilities.css.map
+|   |   |   |       bootstrap-utilities.min.css
+|   |   |   |       bootstrap-utilities.min.css.map
+|   |   |   |       bootstrap-utilities.rtl.css
+|   |   |   |       bootstrap-utilities.rtl.css.map
+|   |   |   |       bootstrap-utilities.rtl.min.css
+|   |   |   |       bootstrap-utilities.rtl.min.css.map
+|   |   |   |       bootstrap.css
+|   |   |   |       bootstrap.css.map
+|   |   |   |       bootstrap.min.css
+|   |   |   |       bootstrap.min.css.map
+|   |   |   |       bootstrap.rtl.css
+|   |   |   |       bootstrap.rtl.css.map
+|   |   |   |       bootstrap.rtl.min.css
+|   |   |   |       bootstrap.rtl.min.css.map
+|   |   |   |       
+|   |   |   \---Scripts
+|   |   |           bootstrap.bundle.js
+|   |   |           bootstrap.bundle.js.map
+|   |   |           bootstrap.bundle.min.js
+|   |   |           bootstrap.bundle.min.js.map
+|   |   |           bootstrap.esm.js
+|   |   |           bootstrap.esm.js.map
+|   |   |           bootstrap.esm.min.js
+|   |   |           bootstrap.esm.min.js.map
+|   |   |           bootstrap.js
+|   |   |           bootstrap.js.map
+|   |   |           bootstrap.min.js
+|   |   |           bootstrap.min.js.map
+|   |   |           
+|   |   \---contentFiles
+|   |       \---any
+|   |           \---any
+|   |               \---wwwroot
+|   |                   +---css
+|   |                   |       bootstrap-grid.css
+|   |                   |       bootstrap-grid.css.map
+|   |                   |       bootstrap-grid.min.css
+|   |                   |       bootstrap-grid.min.css.map
+|   |                   |       bootstrap-grid.rtl.css
+|   |                   |       bootstrap-grid.rtl.css.map
+|   |                   |       bootstrap-grid.rtl.min.css
+|   |                   |       bootstrap-grid.rtl.min.css.map
+|   |                   |       bootstrap-reboot.css
+|   |                   |       bootstrap-reboot.css.map
+|   |                   |       bootstrap-reboot.min.css
+|   |                   |       bootstrap-reboot.min.css.map
+|   |                   |       bootstrap-reboot.rtl.css
+|   |                   |       bootstrap-reboot.rtl.css.map
+|   |                   |       bootstrap-reboot.rtl.min.css
+|   |                   |       bootstrap-reboot.rtl.min.css.map
+|   |                   |       bootstrap-utilities.css
+|   |                   |       bootstrap-utilities.css.map
+|   |                   |       bootstrap-utilities.min.css
+|   |                   |       bootstrap-utilities.min.css.map
+|   |                   |       bootstrap-utilities.rtl.css
+|   |                   |       bootstrap-utilities.rtl.css.map
+|   |                   |       bootstrap-utilities.rtl.min.css
+|   |                   |       bootstrap-utilities.rtl.min.css.map
+|   |                   |       bootstrap.css
+|   |                   |       bootstrap.css.map
+|   |                   |       bootstrap.min.css
+|   |                   |       bootstrap.min.css.map
+|   |                   |       bootstrap.rtl.css
+|   |                   |       bootstrap.rtl.css.map
+|   |                   |       bootstrap.rtl.min.css
+|   |                   |       bootstrap.rtl.min.css.map
+|   |                   |       
+|   |                   \---js
+|   |                           bootstrap.bundle.js
+|   |                           bootstrap.bundle.js.map
+|   |                           bootstrap.bundle.min.js
+|   |                           bootstrap.bundle.min.js.map
+|   |                           bootstrap.esm.js
+|   |                           bootstrap.esm.js.map
+|   |                           bootstrap.esm.min.js
+|   |                           bootstrap.esm.min.js.map
+|   |                           bootstrap.js
+|   |                           bootstrap.js.map
+|   |                           bootstrap.min.js
+|   |                           bootstrap.min.js.map
+|   |                           
+|   +---jQuery.3.7.0
+|   |   |   .signature.p7s
+|   |   |   jQuery.3.7.0.nupkg
+|   |   |   
+|   |   +---Content
+|   |   |   \---Scripts
+|   |   |           jquery-3.7.0-vsdoc.js
+|   |   |           jquery-3.7.0.js
+|   |   |           jquery-3.7.0.min.js
+|   |   |           jquery-3.7.0.min.map
+|   |   |           jquery-3.7.0.slim.js
+|   |   |           jquery-3.7.0.slim.min.js
+|   |   |           jquery-3.7.0.slim.min.map
+|   |   |           
+|   |   \---Tools
+|   |           common.ps1
+|   |           install.ps1
+|   |           jquery-3.7.0.intellisense.js
+|   |           uninstall.ps1
+|   |           
+|   +---Microsoft.AspNet.FriendlyUrls.1.0.2
+|   |   |   .signature.p7s
+|   |   |   Microsoft.AspNet.FriendlyUrls.1.0.2.nupkg
+|   |   |   readme.txt
+|   |   |   
+|   |   \---Content
+|   |       |   Site.Mobile.Master.cs.pp
+|   |       |   Site.Mobile.Master.designer.cs.pp
+|   |       |   Site.Mobile.Master.pp
+|   |       |   ViewSwitcher.ascx.cs.pp
+|   |       |   ViewSwitcher.ascx.designer.cs.pp
+|   |       |   ViewSwitcher.ascx.pp
+|   |       |   
+|   |       \---App_Start
+|   |               RouteConfig.cs.pp
+|   |               
+|   +---Microsoft.AspNet.FriendlyUrls.Core.1.0.2
+|   |   |   .signature.p7s
+|   |   |   Microsoft.AspNet.FriendlyUrls.Core.1.0.2.nupkg
+|   |   |   
+|   |   \---lib
+|   |       +---net40
+|   |       |   |   Microsoft.AspNet.FriendlyUrls.dll
+|   |       |   |   Microsoft.AspNet.FriendlyUrls.xml
+|   |       |   |   
+|   |       |   \---es
+|   |       |           Microsoft.AspNet.FriendlyUrls.resources.dll
+|   |       |           Microsoft.AspNet.FriendlyUrls.xml
+|   |       |           
+|   |       \---net45
+|   |           |   Microsoft.AspNet.FriendlyUrls.dll
+|   |           |   Microsoft.AspNet.FriendlyUrls.xml
+|   |           |   
+|   |           \---es
+|   |                   Microsoft.AspNet.FriendlyUrls.resources.dll
+|   |                   Microsoft.AspNet.FriendlyUrls.xml
+|   |                   
+|   +---Microsoft.AspNet.FriendlyUrls.Core.es.1.0.2
+|   |   |   .signature.p7s
+|   |   |   Microsoft.AspNet.FriendlyUrls.Core.es.1.0.2.nupkg
+|   |   |   
+|   |   \---lib
+|   |       +---net40
+|   |       |   \---es
+|   |       |           Microsoft.AspNet.FriendlyUrls.resources.dll
+|   |       |           Microsoft.AspNet.FriendlyUrls.xml
+|   |       |           
+|   |       \---net45
+|   |           \---es
+|   |                   Microsoft.AspNet.FriendlyUrls.resources.dll
+|   |                   Microsoft.AspNet.FriendlyUrls.xml
+|   |                   
+|   +---Microsoft.AspNet.ScriptManager.MSAjax.5.0.0
+|   |   |   .signature.p7s
+|   |   |   Microsoft.AspNet.ScriptManager.MSAjax.5.0.0.nupkg
+|   |   |   
+|   |   +---content
+|   |   |   \---Scripts
+|   |   |       \---WebForms
+|   |   |           \---MSAjax
+|   |   |                   MicrosoftAjax.js
+|   |   |                   MicrosoftAjaxApplicationServices.js
+|   |   |                   MicrosoftAjaxComponentModel.js
+|   |   |                   MicrosoftAjaxCore.js
+|   |   |                   MicrosoftAjaxGlobalization.js
+|   |   |                   MicrosoftAjaxHistory.js
+|   |   |                   MicrosoftAjaxNetwork.js
+|   |   |                   MicrosoftAjaxSerialization.js
+|   |   |                   MicrosoftAjaxTimer.js
+|   |   |                   MicrosoftAjaxWebForms.js
+|   |   |                   MicrosoftAjaxWebServices.js
+|   |   |                   
+|   |   \---lib
+|   |       \---net45
+|   |               Microsoft.ScriptManager.MSAjax.dll
+|   |               
+|   +---Microsoft.AspNet.ScriptManager.WebForms.5.0.0
+|   |   |   .signature.p7s
+|   |   |   Microsoft.AspNet.ScriptManager.WebForms.5.0.0.nupkg
+|   |   |   
+|   |   +---content
+|   |   |   \---Scripts
+|   |   |       \---WebForms
+|   |   |               DetailsView.js
+|   |   |               Focus.js
+|   |   |               GridView.js
+|   |   |               Menu.js
+|   |   |               MenuStandards.js
+|   |   |               SmartNav.js
+|   |   |               TreeView.js
+|   |   |               WebForms.js
+|   |   |               WebParts.js
+|   |   |               WebUIValidation.js
+|   |   |               
+|   |   \---lib
+|   |       \---net45
+|   |               Microsoft.ScriptManager.WebForms.dll
+|   |               
+|   +---Microsoft.AspNet.Web.Optimization.1.1.3
+|   |   |   .signature.p7s
+|   |   |   Microsoft.AspNet.Web.Optimization.1.1.3.nupkg
+|   |   |   
+|   |   \---lib
+|   |       \---net40
+|   |           |   System.Web.Optimization.dll
+|   |           |   system.web.optimization.xml
+|   |           |   
+|   |           \---es
+|   |                   System.Web.Optimization.resources.dll
+|   |                   
+|   +---Microsoft.AspNet.Web.Optimization.es.1.1.3
+|   |   |   .signature.p7s
+|   |   |   Microsoft.AspNet.Web.Optimization.es.1.1.3.nupkg
+|   |   |   
+|   |   \---lib
+|   |       \---net40
+|   |           \---es
+|   |                   System.Web.Optimization.resources.dll
+|   |                   
+|   +---Microsoft.AspNet.Web.Optimization.WebForms.1.1.3
+|   |   |   .signature.p7s
+|   |   |   Microsoft.AspNet.Web.Optimization.WebForms.1.1.3.nupkg
+|   |   |   
+|   |   +---content
+|   |   |       web.config.transform
+|   |   |       
+|   |   \---lib
+|   |       \---net45
+|   |               Microsoft.AspNet.Web.Optimization.WebForms.dll
+|   |               
+|   +---Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1
+|   |   |   .signature.p7s
+|   |   |   Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1.nupkg
+|   |   |   
+|   |   +---build
+|   |   |   +---net45
+|   |   |   |       Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props
+|   |   |   |       Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props
+|   |   |   |       
+|   |   |   \---net46
+|   |   |           Microsoft.CodeDom.Providers.DotNetCompilerPlatform.Extensions.props
+|   |   |           Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props
+|   |   |           
+|   |   +---content
+|   |   |   +---net45
+|   |   |   |       app.config.install.xdt
+|   |   |   |       app.config.uninstall.xdt
+|   |   |   |       web.config.install.xdt
+|   |   |   |       web.config.uninstall.xdt
+|   |   |   |       
+|   |   |   \---net46
+|   |   |           app.config.install.xdt
+|   |   |           app.config.uninstall.xdt
+|   |   |           web.config.install.xdt
+|   |   |           web.config.uninstall.xdt
+|   |   |           
+|   |   +---lib
+|   |   |   \---net45
+|   |   |           Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+|   |   |           Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+|   |   |           
+|   |   \---tools
+|   |       +---net45
+|   |       |       install.ps1
+|   |       |       uninstall.ps1
+|   |       |       
+|   |       +---Roslyn45
+|   |       |       csc.exe
+|   |       |       csc.exe.config
+|   |       |       csc.rsp
+|   |       |       csi.exe
+|   |       |       csi.rsp
+|   |       |       Microsoft.Build.Tasks.CodeAnalysis.dll
+|   |       |       Microsoft.CodeAnalysis.CSharp.dll
+|   |       |       Microsoft.CodeAnalysis.CSharp.Scripting.dll
+|   |       |       Microsoft.CodeAnalysis.dll
+|   |       |       Microsoft.CodeAnalysis.Scripting.dll
+|   |       |       Microsoft.CodeAnalysis.VisualBasic.dll
+|   |       |       Microsoft.CSharp.Core.targets
+|   |       |       Microsoft.DiaSymReader.Native.amd64.dll
+|   |       |       Microsoft.DiaSymReader.Native.x86.dll
+|   |       |       Microsoft.VisualBasic.Core.targets
+|   |       |       System.AppContext.dll
+|   |       |       System.Collections.Immutable.dll
+|   |       |       System.Diagnostics.StackTrace.dll
+|   |       |       System.IO.FileSystem.dll
+|   |       |       System.IO.FileSystem.Primitives.dll
+|   |       |       System.Reflection.Metadata.dll
+|   |       |       vbc.exe
+|   |       |       vbc.exe.config
+|   |       |       vbc.rsp
+|   |       |       VBCSCompiler.exe
+|   |       |       VBCSCompiler.exe.config
+|   |       |       
+|   |       \---RoslynLatest
+|   |               csc.exe
+|   |               csc.exe.config
+|   |               csc.rsp
+|   |               csi.exe
+|   |               csi.exe.config
+|   |               csi.rsp
+|   |               Microsoft.Build.Tasks.CodeAnalysis.dll
+|   |               Microsoft.CodeAnalysis.CSharp.dll
+|   |               Microsoft.CodeAnalysis.CSharp.Scripting.dll
+|   |               Microsoft.CodeAnalysis.dll
+|   |               Microsoft.CodeAnalysis.Scripting.dll
+|   |               Microsoft.CodeAnalysis.VisualBasic.dll
+|   |               Microsoft.CSharp.Core.targets
+|   |               Microsoft.DiaSymReader.Native.amd64.dll
+|   |               Microsoft.DiaSymReader.Native.x86.dll
+|   |               Microsoft.Managed.Core.targets
+|   |               Microsoft.VisualBasic.Core.targets
+|   |               Microsoft.Win32.Primitives.dll
+|   |               System.AppContext.dll
+|   |               System.Collections.Immutable.dll
+|   |               System.Console.dll
+|   |               System.Diagnostics.DiagnosticSource.dll
+|   |               System.Diagnostics.FileVersionInfo.dll
+|   |               System.Diagnostics.StackTrace.dll
+|   |               System.Globalization.Calendars.dll
+|   |               System.IO.Compression.dll
+|   |               System.IO.Compression.ZipFile.dll
+|   |               System.IO.FileSystem.dll
+|   |               System.IO.FileSystem.Primitives.dll
+|   |               System.Net.Http.dll
+|   |               System.Net.Sockets.dll
+|   |               System.Reflection.Metadata.dll
+|   |               System.Runtime.InteropServices.RuntimeInformation.dll
+|   |               System.Security.Cryptography.Algorithms.dll
+|   |               System.Security.Cryptography.Encoding.dll
+|   |               System.Security.Cryptography.Primitives.dll
+|   |               System.Security.Cryptography.X509Certificates.dll
+|   |               System.Text.Encoding.CodePages.dll
+|   |               System.Threading.Tasks.Extensions.dll
+|   |               System.ValueTuple.dll
+|   |               System.Xml.ReaderWriter.dll
+|   |               System.Xml.XmlDocument.dll
+|   |               System.Xml.XPath.dll
+|   |               System.Xml.XPath.XDocument.dll
+|   |               vbc.exe
+|   |               vbc.exe.config
+|   |               vbc.rsp
+|   |               VBCSCompiler.exe
+|   |               VBCSCompiler.exe.config
+|   |               
+|   +---Microsoft.Web.Infrastructure.2.0.0
+|   |   |   .signature.p7s
+|   |   |   Microsoft.Web.Infrastructure.2.0.0.nupkg
+|   |   |   NET.icon.png
+|   |   |   NET_Library_EULA_ENU.txt
+|   |   |   
+|   |   \---lib
+|   |       \---net40
+|   |               Microsoft.Web.Infrastructure.dll
+|   |               
+|   +---Modernizr.2.8.3
+|   |   |   .signature.p7s
+|   |   |   Modernizr.2.8.3.nupkg
+|   |   |   
+|   |   +---Content
+|   |   |   \---Scripts
+|   |   |           modernizr-2.8.3.js
+|   |   |           
+|   |   \---Tools
+|   |           common.ps1
+|   |           install.ps1
+|   |           uninstall.ps1
+|   |           
+|   +---Newtonsoft.Json.13.0.3
+|   |   |   .signature.p7s
+|   |   |   LICENSE.md
+|   |   |   Newtonsoft.Json.13.0.3.nupkg
+|   |   |   packageIcon.png
+|   |   |   README.md
+|   |   |   
+|   |   \---lib
+|   |       +---net20
+|   |       |       Newtonsoft.Json.dll
+|   |       |       Newtonsoft.Json.xml
+|   |       |       
+|   |       +---net35
+|   |       |       Newtonsoft.Json.dll
+|   |       |       Newtonsoft.Json.xml
+|   |       |       
+|   |       +---net40
+|   |       |       Newtonsoft.Json.dll
+|   |       |       Newtonsoft.Json.xml
+|   |       |       
+|   |       +---net45
+|   |       |       Newtonsoft.Json.dll
+|   |       |       Newtonsoft.Json.xml
+|   |       |       
+|   |       +---net6.0
+|   |       |       Newtonsoft.Json.dll
+|   |       |       Newtonsoft.Json.xml
+|   |       |       
+|   |       +---netstandard1.0
+|   |       |       Newtonsoft.Json.dll
+|   |       |       Newtonsoft.Json.xml
+|   |       |       
+|   |       +---netstandard1.3
+|   |       |       Newtonsoft.Json.dll
+|   |       |       Newtonsoft.Json.xml
+|   |       |       
+|   |       \---netstandard2.0
+|   |               Newtonsoft.Json.dll
+|   |               Newtonsoft.Json.xml
+|   |               
+|   \---WebGrease.1.6.0
+|       |   .signature.p7s
+|       |   WebGrease.1.6.0.nupkg
+|       |   
+|       +---lib
+|       |       WebGrease.dll
+|       |       
+|       \---tools
+|               WG.EXE
+|               
++---Presentacion
+|   |   App.config
+|   |   Form1.cs
+|   |   Form1.Designer.cs
+|   |   Form1.resx
+|   |   Presentacion.csproj
+|   |   Program.cs
+|   |   
+|   +---bin
+|   |   +---Debug
+|   |   |       CapadeDatos.dll
+|   |   |       CapadeDatos.dll.config
+|   |   |       CapadeDatos.pdb
+|   |   |       CapadeEntidades.dll
+|   |   |       CapadeEntidades.pdb
+|   |   |       CapadeLogica.dll
+|   |   |       CapadeLogica.pdb
+|   |   |       Presentacion.exe
+|   |   |       Presentacion.exe.config
+|   |   |       Presentacion.pdb
+|   |   |       
+|   |   \---Release
+|   +---Clientes
+|   |       frmClientes.cs
+|   |       frmClientes.Designer.cs
+|   |       frmClientes.resx
+|   |       
+|   +---Empleados
+|   |       frmEmpleados.cs
+|   |       frmEmpleados.Designer.cs
+|   |       
+|   +---Factura
+|   |       frmFactura.cs
+|   |       frmFactura.Designer.cs
+|   |       
+|   +---Habitaciones
+|   |       frmHabitaciones.cs
+|   |       frmHabitaciones.Designer.cs
+|   |       
+|   +---Login
+|   |       FrmLogin.cs
+|   |       FrmLogin.Designer.cs
+|   |       FrmLogin.resx
+|   |       
+|   +---obj
+|   |   +---Debug
+|   |   |   |   .NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+|   |   |   |   DesignTimeResolveAssemblyReferences.cache
+|   |   |   |   DesignTimeResolveAssemblyReferencesInput.cache
+|   |   |   |   Presenta.BC77CD05.Up2Date
+|   |   |   |   Presentacion.Clientes.frmClientes.resources
+|   |   |   |   Presentacion.csproj.AssemblyReference.cache
+|   |   |   |   Presentacion.csproj.CoreCompileInputs.cache
+|   |   |   |   Presentacion.csproj.FileListAbsolute.txt
+|   |   |   |   Presentacion.csproj.GenerateResource.cache
+|   |   |   |   Presentacion.exe
+|   |   |   |   Presentacion.Form1.resources
+|   |   |   |   Presentacion.Login.FrmLogin.resources
+|   |   |   |   Presentacion.pdb
+|   |   |   |   Presentacion.Principal.frmMenu.resources
+|   |   |   |   Presentacion.Properties.Resources.resources
+|   |   |   |   Presentacion.Usuario.frmAdminUsuario.resources
+|   |   |   |   Presentacion.Usuariofrms.frmEditUsuario.resources
+|   |   |   |   
+|   |   |   \---TempPE
+|   |   |           Properties.Resources.Designer.cs.dll
+|   |   |           
+|   |   \---Release
+|   |           .NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+|   |           Presentacion.csproj.AssemblyReference.cache
+|   |           
+|   +---Principal
+|   |       frmMenu.cs
+|   |       frmMenu.Designer.cs
+|   |       frmMenu.resx
+|   |       frmPanelPrincipal.cs
+|   |       frmPanelPrincipal.Designer.cs
+|   |       
+|   +---Properties
+|   |       AssemblyInfo.cs
+|   |       Resources.Designer.cs
+|   |       Resources.resx
+|   |       Settings.Designer.cs
+|   |       Settings.settings
+|   |       
+|   +---Reportes
+|   |       frmReportes.cs
+|   |       frmReportes.Designer.cs
+|   |       
+|   +---Reservas
+|   |       frmReservas.cs
+|   |       frmReservas.Designer.cs
+|   |       
+|   +---Resources
+|   |       8e1dc67d-8c76-4768-b26e-a4918f86b965.png
+|   |       af3d58b1-cf0f-4428-8703-7f7a60088fcd (1).jpeg
+|   |       Captura de pantalla 2026-07-22 213102.png
+|   |       password.png
+|   |       usuario.png
+|   |       
+|   +---Servicios
+|   |       frmServicios.cs
+|   |       frmServicios.Designer.cs
+|   |       
+|   \---Usuariofrms
+|           frmAdminUsuario.cs
+|           frmAdminUsuario.Designer.cs
+|           frmAdminUsuario.resx
+|           frmEditUsuario.cs
+|           frmEditUsuario.Designer.cs
+|           frmEditUsuario.resx
+|           
+\---Presentacion Web
+    |   Global.asax
+    |   Global.asax.cs
+    |   packages.config
+    |   Presentacion Web.csproj
+    |   Web.config
+    |   Web.Debug.config
+    |   Web.Release.config
+    |   
+    \---Properties
+            AssemblyInfo.cs
+            
