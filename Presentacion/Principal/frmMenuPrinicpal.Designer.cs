@@ -1,6 +1,6 @@
 ﻿namespace Presentacion.Principal
 {
-    partial class frmMenu
+    partial class frmMenuPrinicpal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelLateral = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrinicpal));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnMenu10 = new System.Windows.Forms.Panel();
             this.textoMenu10 = new System.Windows.Forms.Label();
             this.iconoMenu10 = new System.Windows.Forms.Label();
@@ -62,10 +69,16 @@
             this.btnMenu0 = new System.Windows.Forms.Panel();
             this.textoMenu0 = new System.Windows.Forms.Label();
             this.iconoMenu0 = new System.Windows.Forms.Label();
-            this.lblVersion = new System.Windows.Forms.Label();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panelLateral.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTotalReservas = new System.Windows.Forms.Label();
+            this.lblTituloReservas = new System.Windows.Forms.Label();
+            this.lblNuevasReservas = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.btnMenu10.SuspendLayout();
             this.btnMenu9.SuspendLayout();
             this.btnMenu8.SuspendLayout();
@@ -77,43 +90,111 @@
             this.btnMenu2.SuspendLayout();
             this.btnMenu1.SuspendLayout();
             this.btnMenu0.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelLateral
+            // panel1
             // 
-            this.panelLateral.AutoScroll = true;
-            this.panelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
-            this.panelLateral.Controls.Add(this.btnMenu10);
-            this.panelLateral.Controls.Add(this.btnMenu9);
-            this.panelLateral.Controls.Add(this.btnMenu8);
-            this.panelLateral.Controls.Add(this.btnMenu7);
-            this.panelLateral.Controls.Add(this.btnMenu6);
-            this.panelLateral.Controls.Add(this.btnMenu5);
-            this.panelLateral.Controls.Add(this.btnMenu4);
-            this.panelLateral.Controls.Add(this.btnMenu3);
-            this.panelLateral.Controls.Add(this.btnMenu2);
-            this.panelLateral.Controls.Add(this.btnMenu1);
-            this.panelLateral.Controls.Add(this.btnMenu0);
-            this.panelLateral.Controls.Add(this.lblVersion);
-            this.panelLateral.Controls.Add(this.lblTitulo);
-            this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLateral.Location = new System.Drawing.Point(0, 0);
-            this.panelLateral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(331, 793);
-            this.panelLateral.TabIndex = 2;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1492, 73);
+            this.panel1.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(1276, 6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(68, 61);
+            this.button4.TabIndex = 5;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(1341, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(68, 61);
+            this.button3.TabIndex = 4;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(1415, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(68, 61);
+            this.button2.TabIndex = 3;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(314, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 45);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Baskerville Old Face", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 34);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Hotel APM Grand";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(234)))), ((int)(((byte)(215)))));
+            this.panel2.Controls.Add(this.btnMenu10);
+            this.panel2.Controls.Add(this.btnMenu9);
+            this.panel2.Controls.Add(this.btnMenu8);
+            this.panel2.Controls.Add(this.btnMenu7);
+            this.panel2.Controls.Add(this.btnMenu6);
+            this.panel2.Controls.Add(this.btnMenu5);
+            this.panel2.Controls.Add(this.btnMenu4);
+            this.panel2.Controls.Add(this.btnMenu3);
+            this.panel2.Controls.Add(this.btnMenu2);
+            this.panel2.Controls.Add(this.btnMenu1);
+            this.panel2.Controls.Add(this.btnMenu0);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 73);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(265, 902);
+            this.panel2.TabIndex = 1;
             // 
             // btnMenu10
             // 
-            this.btnMenu10.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
             this.btnMenu10.Controls.Add(this.textoMenu10);
             this.btnMenu10.Controls.Add(this.iconoMenu10);
             this.btnMenu10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu10.Location = new System.Drawing.Point(16, 720);
-            this.btnMenu10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu10.Location = new System.Drawing.Point(13, 811);
+            this.btnMenu10.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu10.Name = "btnMenu10";
-            this.btnMenu10.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu10.TabIndex = 12;
+            this.btnMenu10.Size = new System.Drawing.Size(245, 55);
+            this.btnMenu10.TabIndex = 13;
             this.btnMenu10.Tag = "10";
             // 
             // textoMenu10
@@ -141,15 +222,15 @@
             // 
             // btnMenu9
             // 
-            this.btnMenu9.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
             this.btnMenu9.Controls.Add(this.textoMenu9);
             this.btnMenu9.Controls.Add(this.iconoMenu9);
             this.btnMenu9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu9.Location = new System.Drawing.Point(16, 658);
-            this.btnMenu9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu9.Location = new System.Drawing.Point(13, 732);
+            this.btnMenu9.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu9.Name = "btnMenu9";
-            this.btnMenu9.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu9.TabIndex = 11;
+            this.btnMenu9.Size = new System.Drawing.Size(245, 55);
+            this.btnMenu9.TabIndex = 12;
             this.btnMenu9.Tag = "9";
             // 
             // textoMenu9
@@ -177,15 +258,15 @@
             // 
             // btnMenu8
             // 
-            this.btnMenu8.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
             this.btnMenu8.Controls.Add(this.textoMenu8);
             this.btnMenu8.Controls.Add(this.iconoMenu8);
             this.btnMenu8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu8.Location = new System.Drawing.Point(16, 597);
-            this.btnMenu8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu8.Location = new System.Drawing.Point(13, 653);
+            this.btnMenu8.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu8.Name = "btnMenu8";
-            this.btnMenu8.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu8.TabIndex = 10;
+            this.btnMenu8.Size = new System.Drawing.Size(245, 55);
+            this.btnMenu8.TabIndex = 11;
             this.btnMenu8.Tag = "8";
             // 
             // textoMenu8
@@ -213,15 +294,15 @@
             // 
             // btnMenu7
             // 
-            this.btnMenu7.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
             this.btnMenu7.Controls.Add(this.textoMenu7);
             this.btnMenu7.Controls.Add(this.iconoMenu7);
             this.btnMenu7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu7.Location = new System.Drawing.Point(16, 535);
-            this.btnMenu7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu7.Location = new System.Drawing.Point(13, 574);
+            this.btnMenu7.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu7.Name = "btnMenu7";
-            this.btnMenu7.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu7.TabIndex = 9;
+            this.btnMenu7.Size = new System.Drawing.Size(245, 55);
+            this.btnMenu7.TabIndex = 10;
             this.btnMenu7.Tag = "7";
             // 
             // textoMenu7
@@ -248,15 +329,15 @@
             // 
             // btnMenu6
             // 
-            this.btnMenu6.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
             this.btnMenu6.Controls.Add(this.textoMenu6);
             this.btnMenu6.Controls.Add(this.iconoMenu6);
             this.btnMenu6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu6.Location = new System.Drawing.Point(16, 474);
-            this.btnMenu6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu6.Location = new System.Drawing.Point(13, 495);
+            this.btnMenu6.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu6.Name = "btnMenu6";
-            this.btnMenu6.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu6.TabIndex = 8;
+            this.btnMenu6.Size = new System.Drawing.Size(245, 55);
+            this.btnMenu6.TabIndex = 9;
             this.btnMenu6.Tag = "6";
             // 
             // textoMenu6
@@ -284,15 +365,15 @@
             // 
             // btnMenu5
             // 
-            this.btnMenu5.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
             this.btnMenu5.Controls.Add(this.textoMenu5);
             this.btnMenu5.Controls.Add(this.iconoMenu5);
             this.btnMenu5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu5.Location = new System.Drawing.Point(16, 412);
-            this.btnMenu5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu5.Location = new System.Drawing.Point(13, 416);
+            this.btnMenu5.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu5.Name = "btnMenu5";
-            this.btnMenu5.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu5.TabIndex = 7;
+            this.btnMenu5.Size = new System.Drawing.Size(245, 55);
+            this.btnMenu5.TabIndex = 8;
             this.btnMenu5.Tag = "5";
             // 
             // textoMenu5
@@ -320,15 +401,15 @@
             // 
             // btnMenu4
             // 
-            this.btnMenu4.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
             this.btnMenu4.Controls.Add(this.textoMenu4);
             this.btnMenu4.Controls.Add(this.iconoMenu4);
             this.btnMenu4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu4.Location = new System.Drawing.Point(16, 351);
-            this.btnMenu4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu4.Location = new System.Drawing.Point(13, 337);
+            this.btnMenu4.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu4.Name = "btnMenu4";
-            this.btnMenu4.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu4.TabIndex = 6;
+            this.btnMenu4.Size = new System.Drawing.Size(245, 55);
+            this.btnMenu4.TabIndex = 7;
             this.btnMenu4.Tag = "4";
             // 
             // textoMenu4
@@ -356,15 +437,15 @@
             // 
             // btnMenu3
             // 
-            this.btnMenu3.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
             this.btnMenu3.Controls.Add(this.textoMenu3);
             this.btnMenu3.Controls.Add(this.iconoMenu3);
             this.btnMenu3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu3.Location = new System.Drawing.Point(16, 289);
-            this.btnMenu3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu3.Location = new System.Drawing.Point(13, 258);
+            this.btnMenu3.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu3.Name = "btnMenu3";
-            this.btnMenu3.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu3.TabIndex = 5;
+            this.btnMenu3.Size = new System.Drawing.Size(245, 55);
+            this.btnMenu3.TabIndex = 8;
             this.btnMenu3.Tag = "3";
             // 
             // textoMenu3
@@ -392,15 +473,15 @@
             // 
             // btnMenu2
             // 
-            this.btnMenu2.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
             this.btnMenu2.Controls.Add(this.textoMenu2);
             this.btnMenu2.Controls.Add(this.iconoMenu2);
             this.btnMenu2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu2.Location = new System.Drawing.Point(16, 228);
-            this.btnMenu2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu2.Location = new System.Drawing.Point(13, 179);
+            this.btnMenu2.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu2.Name = "btnMenu2";
-            this.btnMenu2.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu2.TabIndex = 4;
+            this.btnMenu2.Size = new System.Drawing.Size(245, 55);
+            this.btnMenu2.TabIndex = 7;
             this.btnMenu2.Tag = "2";
             // 
             // textoMenu2
@@ -428,17 +509,16 @@
             // 
             // btnMenu1
             // 
-            this.btnMenu1.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(235)))), ((int)(((byte)(225)))));
             this.btnMenu1.Controls.Add(this.textoMenu1);
             this.btnMenu1.Controls.Add(this.iconoMenu1);
             this.btnMenu1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu1.Location = new System.Drawing.Point(16, 166);
-            this.btnMenu1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu1.Location = new System.Drawing.Point(13, 100);
+            this.btnMenu1.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu1.Name = "btnMenu1";
-            this.btnMenu1.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu1.TabIndex = 3;
+            this.btnMenu1.Size = new System.Drawing.Size(245, 55);
+            this.btnMenu1.TabIndex = 6;
             this.btnMenu1.Tag = "1";
-            this.btnMenu1.Paint += new System.Windows.Forms.PaintEventHandler(this.btnMenu1_Paint);
             // 
             // textoMenu1
             // 
@@ -469,11 +549,11 @@
             this.btnMenu0.Controls.Add(this.textoMenu0);
             this.btnMenu0.Controls.Add(this.iconoMenu0);
             this.btnMenu0.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu0.Location = new System.Drawing.Point(16, 103);
-            this.btnMenu0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMenu0.Location = new System.Drawing.Point(13, 14);
+            this.btnMenu0.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenu0.Name = "btnMenu0";
-            this.btnMenu0.Size = new System.Drawing.Size(280, 55);
-            this.btnMenu0.TabIndex = 2;
+            this.btnMenu0.Size = new System.Drawing.Size(245, 62);
+            this.btnMenu0.TabIndex = 3;
             this.btnMenu0.Tag = "0";
             // 
             // textoMenu0
@@ -498,53 +578,109 @@
             this.iconoMenu0.TabIndex = 0;
             this.iconoMenu0.Text = "🏠";
             // 
-            // lblVersion
+            // panel3
             // 
-            this.lblVersion.AutoSize = true;
-            this.lblVersion.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(72)))), ((int)(((byte)(41)))));
-            this.lblVersion.Location = new System.Drawing.Point(16, 48);
-            this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(51, 20);
-            this.lblVersion.TabIndex = 1;
-            this.lblVersion.Text = "APM";
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(265, 73);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1227, 44);
+            this.panel3.TabIndex = 2;
             // 
-            // lblTitulo
+            // label3
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(72)))), ((int)(((byte)(41)))));
-            this.lblTitulo.Location = new System.Drawing.Point(13, 11);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(286, 31);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "ADMINISTRACION";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1076, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 19);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Home / Dashboard";
             // 
-            // panel1
+            // label2
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(331, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(736, 793);
-            this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Baskerville Old Face", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 19);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Dashboard";
             // 
-            // frmMenu
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(154)))), ((int)(((byte)(107)))));
+            this.panel4.Controls.Add(this.lblNuevasReservas);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.lblTotalReservas);
+            this.panel4.Controls.Add(this.lblTituloReservas);
+            this.panel4.Location = new System.Drawing.Point(280, 135);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(504, 309);
+            this.panel4.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(221, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(266, 271);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblTotalReservas
+            // 
+            this.lblTotalReservas.AutoSize = true;
+            this.lblTotalReservas.Font = new System.Drawing.Font("Baskerville Old Face", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalReservas.ForeColor = System.Drawing.Color.White;
+            this.lblTotalReservas.Location = new System.Drawing.Point(14, 135);
+            this.lblTotalReservas.Name = "lblTotalReservas";
+            this.lblTotalReservas.Size = new System.Drawing.Size(24, 26);
+            this.lblTotalReservas.TabIndex = 1;
+            this.lblTotalReservas.Text = "0";
+            // 
+            // lblTituloReservas
+            // 
+            this.lblTituloReservas.AutoSize = true;
+            this.lblTituloReservas.Font = new System.Drawing.Font("Baskerville Old Face", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloReservas.ForeColor = System.Drawing.Color.White;
+            this.lblTituloReservas.Location = new System.Drawing.Point(14, 16);
+            this.lblTituloReservas.Name = "lblTituloReservas";
+            this.lblTituloReservas.Size = new System.Drawing.Size(161, 26);
+            this.lblTituloReservas.TabIndex = 0;
+            this.lblTituloReservas.Text = "Reservas Total";
+            // 
+            // lblNuevasReservas
+            // 
+            this.lblNuevasReservas.AutoSize = true;
+            this.lblNuevasReservas.Font = new System.Drawing.Font("Baskerville Old Face", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevasReservas.ForeColor = System.Drawing.Color.White;
+            this.lblNuevasReservas.Location = new System.Drawing.Point(14, 261);
+            this.lblNuevasReservas.Name = "lblNuevasReservas";
+            this.lblNuevasReservas.Size = new System.Drawing.Size(198, 26);
+            this.lblNuevasReservas.TabIndex = 3;
+            this.lblNuevasReservas.Text = "0 Nuevas Reservas";
+            // 
+            // frmMenuPrinicpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 793);
+            this.ClientSize = new System.Drawing.Size(1492, 975);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelLateral);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "frmMenu";
-            this.Text = "frmMenu";
-            this.panelLateral.ResumeLayout(false);
-            this.panelLateral.PerformLayout();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmMenuPrinicpal";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frmMenuPrinicpal";
+            this.Load += new System.EventHandler(this.frmMenuPrinicpal_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.btnMenu10.ResumeLayout(false);
             this.btnMenu10.PerformLayout();
             this.btnMenu9.ResumeLayout(false);
@@ -567,49 +703,64 @@
             this.btnMenu1.PerformLayout();
             this.btnMenu0.ResumeLayout(false);
             this.btnMenu0.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelLateral;
-        private System.Windows.Forms.Panel btnMenu10;
-        private System.Windows.Forms.Label textoMenu10;
-        private System.Windows.Forms.Label iconoMenu10;
-        private System.Windows.Forms.Panel btnMenu9;
-        private System.Windows.Forms.Label textoMenu9;
-        private System.Windows.Forms.Label iconoMenu9;
-        private System.Windows.Forms.Panel btnMenu8;
-        private System.Windows.Forms.Label textoMenu8;
-        private System.Windows.Forms.Label iconoMenu8;
-        private System.Windows.Forms.Panel btnMenu7;
-        private System.Windows.Forms.Label textoMenu7;
-        private System.Windows.Forms.Label iconoMenu7;
-        private System.Windows.Forms.Panel btnMenu6;
-        private System.Windows.Forms.Label textoMenu6;
-        private System.Windows.Forms.Label iconoMenu6;
-        private System.Windows.Forms.Panel btnMenu5;
-        private System.Windows.Forms.Label textoMenu5;
-        private System.Windows.Forms.Label iconoMenu5;
-        private System.Windows.Forms.Panel btnMenu4;
-        private System.Windows.Forms.Label textoMenu4;
-        private System.Windows.Forms.Label iconoMenu4;
-        private System.Windows.Forms.Panel btnMenu3;
-        private System.Windows.Forms.Label textoMenu3;
-        private System.Windows.Forms.Label iconoMenu3;
-        private System.Windows.Forms.Panel btnMenu2;
-        private System.Windows.Forms.Label textoMenu2;
-        private System.Windows.Forms.Label iconoMenu2;
-        private System.Windows.Forms.Panel btnMenu1;
-        private System.Windows.Forms.Label textoMenu1;
-        private System.Windows.Forms.Label iconoMenu1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel btnMenu0;
         private System.Windows.Forms.Label textoMenu0;
         private System.Windows.Forms.Label iconoMenu0;
-        private System.Windows.Forms.Label lblVersion;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel btnMenu1;
+        private System.Windows.Forms.Label textoMenu1;
+        private System.Windows.Forms.Label iconoMenu1;
+        private System.Windows.Forms.Panel btnMenu2;
+        private System.Windows.Forms.Label textoMenu2;
+        private System.Windows.Forms.Label iconoMenu2;
+        private System.Windows.Forms.Panel btnMenu3;
+        private System.Windows.Forms.Label textoMenu3;
+        private System.Windows.Forms.Label iconoMenu3;
+        private System.Windows.Forms.Panel btnMenu4;
+        private System.Windows.Forms.Label textoMenu4;
+        private System.Windows.Forms.Label iconoMenu4;
+        private System.Windows.Forms.Panel btnMenu5;
+        private System.Windows.Forms.Label textoMenu5;
+        private System.Windows.Forms.Label iconoMenu5;
+        private System.Windows.Forms.Panel btnMenu6;
+        private System.Windows.Forms.Label textoMenu6;
+        private System.Windows.Forms.Label iconoMenu6;
+        private System.Windows.Forms.Panel btnMenu7;
+        private System.Windows.Forms.Label textoMenu7;
+        private System.Windows.Forms.Label iconoMenu7;
+        private System.Windows.Forms.Panel btnMenu8;
+        private System.Windows.Forms.Label textoMenu8;
+        private System.Windows.Forms.Label iconoMenu8;
+        private System.Windows.Forms.Panel btnMenu9;
+        private System.Windows.Forms.Label textoMenu9;
+        private System.Windows.Forms.Label iconoMenu9;
+        private System.Windows.Forms.Panel btnMenu10;
+        private System.Windows.Forms.Label textoMenu10;
+        private System.Windows.Forms.Label iconoMenu10;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblTituloReservas;
+        private System.Windows.Forms.Label lblTotalReservas;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblNuevasReservas;
     }
 }

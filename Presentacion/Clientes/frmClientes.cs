@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapadeEntidades.Usuario;
+using CapadeLogica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapadeLogica;
 using Cliente = CapadeEntidades.Cliente.Cliente;
 
 namespace Presentacion.Clientes
@@ -28,6 +29,7 @@ namespace Presentacion.Clientes
         {
             dataGridView1.DataSource = clienteLN.ListarClientes();
         }
+        
 
         // ---------------- Eventos de texto (sin validación en tiempo real por ahora) ----------------
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -68,6 +70,38 @@ namespace Presentacion.Clientes
 
         private void textBox9_TextChanged(object sender, EventArgs e) // Buscar (sin uso por ahora)
         {
+            FiltrarClientes(textBox9.Text.Trim());
+        }
+        public void FiltrarClientes(string texto)
+        {
+            try
+            {
+                string filtro = texto?.Trim().ToLower() ?? "";
+
+                // Obtenemos la lista base completa
+                List<Cliente> listaCompleta = clienteLN.ListarClientes();
+
+                if (string.IsNullOrWhiteSpace(filtro))
+                {
+                    dataGridView1.DataSource = listaCompleta;
+                }
+                else
+                {
+                    // Filtramos localmente por cualquier campo relevante
+                    var listaFiltrada = listaCompleta.Where(c =>
+                        (c.Nombre != null && c.Nombre.ToLower().Contains(filtro)) ||
+                        (c.Apellido != null && c.Apellido.ToLower().Contains(filtro)) ||
+                        (c.DocumentoIdentidad != null && c.DocumentoIdentidad.ToLower().Contains(filtro)) ||
+                        (c.Telefono != null && c.Telefono.ToLower().Contains(filtro))
+                    ).ToList();
+
+                    dataGridView1.DataSource = listaFiltrada;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar clientes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // ---------------- Click en el grid: cargar el cliente seleccionado en los campos ----------------
