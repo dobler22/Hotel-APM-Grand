@@ -42,7 +42,7 @@ namespace Presentacion.Login
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // 1. Validar campos
+            // 1. Validar campos 
             if (!ValidarCampos())
             {
                 return;
@@ -88,17 +88,80 @@ namespace Presentacion.Login
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            // Opcional: validaciones en tiempo real
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            // Opcional: validaciones en tiempo real
+            
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            // Inicialización si necesitas algo al cargar
+           
+        }
+
+        private void FrmLogin_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmLogin_Resize(object sender, EventArgs e)
+        {
+            // Evaluamos si el formulario se acaba de MAXIMIZAR
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                // Pon aquí los números exactos en píxeles que quieres para la posición
+                // X = posición horizontal (ejemplo: 950 píxeles desde la izquierda)
+                // Y = posición vertical (ejemplo: 220 píxeles desde arriba)
+                panel3.Location = new Point(230, 225);
+            }
+            else if (this.WindowState == FormWindowState.Normal)
+            {
+                // Cuando vuelve al tamaño normal al iniciar, pones sus números originales
+                // Reemplaza (682, 173) por las coordenadas que tenía tu panel3 al inicio en el diseñador
+                panel3.Location = new Point(0, 159);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Resize(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Resize(object sender, EventArgs e)
+        {
+
         }
     }
 }
