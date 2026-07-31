@@ -73,14 +73,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblNuevasReservas = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblNuevasReservas = new System.Windows.Forms.Label();
             this.lblTotalReservas = new System.Windows.Forms.Label();
             this.lblTituloReservas = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblNuevasFacturas = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblTotalFacturas = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblTotalEmpleados = new System.Windows.Forms.Label();
@@ -92,6 +92,8 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panelContenido = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.btnMenu10.SuspendLayout();
@@ -115,11 +117,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel7.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panelContenido.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(30)))), ((int)(((byte)(32)))));
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -138,7 +142,7 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(1276, 6);
+            this.button4.Location = new System.Drawing.Point(808, 6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(68, 61);
             this.button4.TabIndex = 5;
@@ -152,7 +156,7 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(1341, 6);
+            this.button3.Location = new System.Drawing.Point(873, 6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(68, 61);
             this.button3.TabIndex = 4;
@@ -226,6 +230,7 @@
             this.btnMenu10.Size = new System.Drawing.Size(245, 55);
             this.btnMenu10.TabIndex = 13;
             this.btnMenu10.Tag = "10";
+            this.btnMenu10.Click += new System.EventHandler(this.btnMenu10_Click);
             // 
             // textoMenu10
             // 
@@ -238,6 +243,7 @@
             this.textoMenu10.Size = new System.Drawing.Size(145, 28);
             this.textoMenu10.TabIndex = 1;
             this.textoMenu10.Text = "Configuración";
+            this.textoMenu10.Click += new System.EventHandler(this.btnMenu10_Click);
             // 
             // iconoMenu10
             // 
@@ -249,6 +255,7 @@
             this.iconoMenu10.Size = new System.Drawing.Size(52, 43);
             this.iconoMenu10.TabIndex = 0;
             this.iconoMenu10.Text = "⚙️";
+            this.iconoMenu10.Click += new System.EventHandler(this.btnMenu10_Click);
             // 
             // btnMenu9
             // 
@@ -262,6 +269,7 @@
             this.btnMenu9.Size = new System.Drawing.Size(245, 55);
             this.btnMenu9.TabIndex = 12;
             this.btnMenu9.Tag = "9";
+            this.btnMenu9.Click += new System.EventHandler(this.btnMenu9_Click);
             // 
             // textoMenu9
             // 
@@ -274,6 +282,7 @@
             this.textoMenu9.Size = new System.Drawing.Size(88, 28);
             this.textoMenu9.TabIndex = 1;
             this.textoMenu9.Text = "Reseñas";
+            this.textoMenu9.Click += new System.EventHandler(this.btnMenu9_Click);
             // 
             // iconoMenu9
             // 
@@ -285,6 +294,7 @@
             this.iconoMenu9.Size = new System.Drawing.Size(52, 43);
             this.iconoMenu9.TabIndex = 0;
             this.iconoMenu9.Text = "🌟";
+            this.iconoMenu9.Click += new System.EventHandler(this.btnMenu9_Click);
             // 
             // btnMenu8
             // 
@@ -298,6 +308,7 @@
             this.btnMenu8.Size = new System.Drawing.Size(245, 55);
             this.btnMenu8.TabIndex = 11;
             this.btnMenu8.Tag = "8";
+            this.btnMenu8.Click += new System.EventHandler(this.btnMenu8_Click);
             // 
             // textoMenu8
             // 
@@ -310,6 +321,7 @@
             this.textoMenu8.Size = new System.Drawing.Size(97, 28);
             this.textoMenu8.TabIndex = 1;
             this.textoMenu8.Text = "Reportes";
+            this.textoMenu8.Click += new System.EventHandler(this.btnMenu8_Click);
             // 
             // iconoMenu8
             // 
@@ -321,6 +333,7 @@
             this.iconoMenu8.Size = new System.Drawing.Size(52, 43);
             this.iconoMenu8.TabIndex = 0;
             this.iconoMenu8.Text = "📊";
+            this.iconoMenu8.Click += new System.EventHandler(this.btnMenu8_Click);
             // 
             // btnMenu7
             // 
@@ -334,6 +347,7 @@
             this.btnMenu7.Size = new System.Drawing.Size(245, 55);
             this.btnMenu7.TabIndex = 10;
             this.btnMenu7.Tag = "7";
+            this.btnMenu7.Click += new System.EventHandler(this.btnMenu7_Click);
             // 
             // textoMenu7
             // 
@@ -346,6 +360,7 @@
             this.textoMenu7.Size = new System.Drawing.Size(114, 28);
             this.textoMenu7.TabIndex = 1;
             this.textoMenu7.Text = "Empleados";
+            this.textoMenu7.Click += new System.EventHandler(this.btnMenu7_Click);
             // 
             // iconoMenu7
             // 
@@ -356,6 +371,7 @@
             this.iconoMenu7.Size = new System.Drawing.Size(52, 43);
             this.iconoMenu7.TabIndex = 0;
             this.iconoMenu7.Text = "👔";
+            this.iconoMenu7.Click += new System.EventHandler(this.btnMenu7_Click);
             // 
             // btnMenu6
             // 
@@ -369,6 +385,7 @@
             this.btnMenu6.Size = new System.Drawing.Size(245, 55);
             this.btnMenu6.TabIndex = 9;
             this.btnMenu6.Tag = "6";
+            this.btnMenu6.Click += new System.EventHandler(this.btnMenu6_Click);
             // 
             // textoMenu6
             // 
@@ -381,6 +398,7 @@
             this.textoMenu6.Size = new System.Drawing.Size(97, 28);
             this.textoMenu6.TabIndex = 1;
             this.textoMenu6.Text = "Servicios";
+            this.textoMenu6.Click += new System.EventHandler(this.btnMenu6_Click);
             // 
             // iconoMenu6
             // 
@@ -392,6 +410,7 @@
             this.iconoMenu6.Size = new System.Drawing.Size(52, 43);
             this.iconoMenu6.TabIndex = 0;
             this.iconoMenu6.Text = "🛎️";
+            this.iconoMenu6.Click += new System.EventHandler(this.btnMenu6_Click);
             // 
             // btnMenu5
             // 
@@ -405,6 +424,7 @@
             this.btnMenu5.Size = new System.Drawing.Size(245, 55);
             this.btnMenu5.TabIndex = 8;
             this.btnMenu5.Tag = "5";
+            this.btnMenu5.Click += new System.EventHandler(this.btnMenu5_Click);
             // 
             // textoMenu5
             // 
@@ -417,6 +437,7 @@
             this.textoMenu5.Size = new System.Drawing.Size(68, 28);
             this.textoMenu5.TabIndex = 1;
             this.textoMenu5.Text = "Pagos";
+            this.textoMenu5.Click += new System.EventHandler(this.btnMenu5_Click);
             // 
             // iconoMenu5
             // 
@@ -428,6 +449,7 @@
             this.iconoMenu5.Size = new System.Drawing.Size(52, 43);
             this.iconoMenu5.TabIndex = 0;
             this.iconoMenu5.Text = "💳";
+            this.iconoMenu5.Click += new System.EventHandler(this.btnMenu5_Click);
             // 
             // btnMenu4
             // 
@@ -441,6 +463,7 @@
             this.btnMenu4.Size = new System.Drawing.Size(245, 55);
             this.btnMenu4.TabIndex = 7;
             this.btnMenu4.Tag = "4";
+            this.btnMenu4.Click += new System.EventHandler(this.btnMenu4_Click);
             // 
             // textoMenu4
             // 
@@ -453,6 +476,7 @@
             this.textoMenu4.Size = new System.Drawing.Size(90, 28);
             this.textoMenu4.TabIndex = 1;
             this.textoMenu4.Text = "Facturas";
+            this.textoMenu4.Click += new System.EventHandler(this.btnMenu4_Click);
             // 
             // iconoMenu4
             // 
@@ -464,6 +488,7 @@
             this.iconoMenu4.Size = new System.Drawing.Size(52, 43);
             this.iconoMenu4.TabIndex = 0;
             this.iconoMenu4.Text = "🧾";
+            this.iconoMenu4.Click += new System.EventHandler(this.btnMenu4_Click);
             // 
             // btnMenu3
             // 
@@ -477,6 +502,7 @@
             this.btnMenu3.Size = new System.Drawing.Size(245, 55);
             this.btnMenu3.TabIndex = 8;
             this.btnMenu3.Tag = "3";
+            this.btnMenu3.Click += new System.EventHandler(this.btnMenu3_Click);
             // 
             // textoMenu3
             // 
@@ -489,6 +515,7 @@
             this.textoMenu3.Size = new System.Drawing.Size(96, 28);
             this.textoMenu3.TabIndex = 1;
             this.textoMenu3.Text = "Reservas";
+            this.textoMenu3.Click += new System.EventHandler(this.btnMenu3_Click);
             // 
             // iconoMenu3
             // 
@@ -500,6 +527,7 @@
             this.iconoMenu3.Size = new System.Drawing.Size(52, 43);
             this.iconoMenu3.TabIndex = 0;
             this.iconoMenu3.Text = "📅";
+            this.iconoMenu3.Click += new System.EventHandler(this.btnMenu3_Click);
             // 
             // btnMenu2
             // 
@@ -513,6 +541,7 @@
             this.btnMenu2.Size = new System.Drawing.Size(245, 55);
             this.btnMenu2.TabIndex = 7;
             this.btnMenu2.Tag = "2";
+            this.btnMenu2.Click += new System.EventHandler(this.btnMenu2_Click);
             // 
             // textoMenu2
             // 
@@ -549,6 +578,7 @@
             this.btnMenu1.Size = new System.Drawing.Size(245, 55);
             this.btnMenu1.TabIndex = 6;
             this.btnMenu1.Tag = "1";
+            this.btnMenu1.Click += new System.EventHandler(this.btnMenu1_Click);
             // 
             // textoMenu1
             // 
@@ -561,6 +591,7 @@
             this.textoMenu1.Size = new System.Drawing.Size(87, 28);
             this.textoMenu1.TabIndex = 1;
             this.textoMenu1.Text = "Clientes";
+            this.textoMenu1.Click += new System.EventHandler(this.btnMenu1_Click);
             // 
             // iconoMenu1
             // 
@@ -572,6 +603,7 @@
             this.iconoMenu1.Size = new System.Drawing.Size(52, 41);
             this.iconoMenu1.TabIndex = 0;
             this.iconoMenu1.Text = "🛏️";
+            this.iconoMenu1.Click += new System.EventHandler(this.btnMenu1_Click);
             // 
             // btnMenu0
             // 
@@ -585,6 +617,7 @@
             this.btnMenu0.Size = new System.Drawing.Size(245, 62);
             this.btnMenu0.TabIndex = 3;
             this.btnMenu0.Tag = "0";
+            this.btnMenu0.Click += new System.EventHandler(this.btnMenu0_Click);
             // 
             // textoMenu0
             // 
@@ -597,6 +630,7 @@
             this.textoMenu0.Size = new System.Drawing.Size(153, 28);
             this.textoMenu0.TabIndex = 1;
             this.textoMenu0.Text = "Panel Principal";
+            this.textoMenu0.Click += new System.EventHandler(this.btnMenu0_Click);
             // 
             // iconoMenu0
             // 
@@ -607,6 +641,7 @@
             this.iconoMenu0.Size = new System.Drawing.Size(52, 43);
             this.iconoMenu0.TabIndex = 0;
             this.iconoMenu0.Text = "🏠";
+            this.iconoMenu0.Click += new System.EventHandler(this.btnMenu0_Click);
             // 
             // panel3
             // 
@@ -655,18 +690,6 @@
             this.panel4.Size = new System.Drawing.Size(601, 316);
             this.panel4.TabIndex = 3;
             // 
-            // lblNuevasReservas
-            // 
-            this.lblNuevasReservas.AutoSize = true;
-            this.lblNuevasReservas.BackColor = System.Drawing.Color.Transparent;
-            this.lblNuevasReservas.Font = new System.Drawing.Font("Baskerville Old Face", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevasReservas.ForeColor = System.Drawing.Color.White;
-            this.lblNuevasReservas.Location = new System.Drawing.Point(7, 255);
-            this.lblNuevasReservas.Name = "lblNuevasReservas";
-            this.lblNuevasReservas.Size = new System.Drawing.Size(364, 50);
-            this.lblNuevasReservas.TabIndex = 3;
-            this.lblNuevasReservas.Text = "0 Nuevas Reservas";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -678,6 +701,18 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // lblNuevasReservas
+            // 
+            this.lblNuevasReservas.AutoSize = true;
+            this.lblNuevasReservas.BackColor = System.Drawing.Color.Transparent;
+            this.lblNuevasReservas.Font = new System.Drawing.Font("Baskerville Old Face", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevasReservas.ForeColor = System.Drawing.Color.White;
+            this.lblNuevasReservas.Location = new System.Drawing.Point(7, 255);
+            this.lblNuevasReservas.Name = "lblNuevasReservas";
+            this.lblNuevasReservas.Size = new System.Drawing.Size(353, 49);
+            this.lblNuevasReservas.TabIndex = 3;
+            this.lblNuevasReservas.Text = "0 Nuevas Reservas";
             // 
             // lblTotalReservas
             // 
@@ -697,16 +732,16 @@
             this.lblTituloReservas.ForeColor = System.Drawing.Color.White;
             this.lblTituloReservas.Location = new System.Drawing.Point(7, 9);
             this.lblTituloReservas.Name = "lblTituloReservas";
-            this.lblTituloReservas.Size = new System.Drawing.Size(293, 50);
+            this.lblTituloReservas.Size = new System.Drawing.Size(285, 49);
             this.lblTituloReservas.TabIndex = 0;
             this.lblTituloReservas.Text = "Reservas Total";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(154)))), ((int)(((byte)(107)))));
-            this.panel5.Controls.Add(this.label4);
+            this.panel5.Controls.Add(this.lblNuevasFacturas);
             this.panel5.Controls.Add(this.pictureBox2);
-            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.lblTotalFacturas);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(631, 10);
@@ -715,16 +750,16 @@
             this.panel5.Size = new System.Drawing.Size(601, 316);
             this.panel5.TabIndex = 4;
             // 
-            // label4
+            // lblNuevasFacturas
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Baskerville Old Face", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(13, 255);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(357, 50);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "0 Nuevas Facturas";
+            this.lblNuevasFacturas.AutoSize = true;
+            this.lblNuevasFacturas.Font = new System.Drawing.Font("Baskerville Old Face", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevasFacturas.ForeColor = System.Drawing.Color.White;
+            this.lblNuevasFacturas.Location = new System.Drawing.Point(13, 255);
+            this.lblNuevasFacturas.Name = "lblNuevasFacturas";
+            this.lblNuevasFacturas.Size = new System.Drawing.Size(346, 49);
+            this.lblNuevasFacturas.TabIndex = 3;
+            this.lblNuevasFacturas.Text = "0 Nuevas Facturas";
             // 
             // pictureBox2
             // 
@@ -738,16 +773,16 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // label5
+            // lblTotalFacturas
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(149, 137);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 69);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "0";
+            this.lblTotalFacturas.AutoSize = true;
+            this.lblTotalFacturas.Font = new System.Drawing.Font("Baskerville Old Face", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFacturas.ForeColor = System.Drawing.Color.White;
+            this.lblTotalFacturas.Location = new System.Drawing.Point(149, 137);
+            this.lblTotalFacturas.Name = "lblTotalFacturas";
+            this.lblTotalFacturas.Size = new System.Drawing.Size(61, 69);
+            this.lblTotalFacturas.TabIndex = 1;
+            this.lblTotalFacturas.Text = "0";
             // 
             // label6
             // 
@@ -756,7 +791,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(13, 16);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(324, 50);
+            this.label6.Size = new System.Drawing.Size(314, 49);
             this.label6.TabIndex = 0;
             this.label6.Text = "Facturas Totales";
             // 
@@ -790,13 +825,13 @@
             this.lblClientes.ForeColor = System.Drawing.Color.White;
             this.lblClientes.Location = new System.Drawing.Point(14, 19);
             this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(358, 50);
+            this.lblClientes.Size = new System.Drawing.Size(349, 49);
             this.lblClientes.TabIndex = 0;
             this.lblClientes.Text = "Empleados Grand";
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.panel6.BackColor = System.Drawing.Color.Peru;
             this.panel6.Controls.Add(this.pictureBox3);
             this.panel6.Controls.Add(this.lblTotalEmpleados);
             this.panel6.Controls.Add(this.lblClientes);
@@ -837,7 +872,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(14, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(301, 50);
+            this.label8.Size = new System.Drawing.Size(292, 49);
             this.label8.TabIndex = 0;
             this.label8.Text = "Clientes Grand";
             // 
@@ -876,7 +911,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(265, 134);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.24138F));
@@ -885,12 +920,34 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1242, 879);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Baskerville Old Face", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(743, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(378, 34);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "usuario_ingreso_apm_grand";
+            // 
+            // panelContenido
+            // 
+            this.panelContenido.Controls.Add(this.tableLayoutPanel1);
+            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenido.Location = new System.Drawing.Point(265, 134);
+            this.panelContenido.Name = "panelContenido";
+            this.panelContenido.Size = new System.Drawing.Size(1242, 879);
+            this.panelContenido.TabIndex = 4;
+            // 
             // frmMenuPrinicpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1507, 1013);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.panelContenido);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -941,6 +998,7 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panelContenido.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -996,9 +1054,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblNuevasReservas;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNuevasFacturas;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTotalFacturas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lblTotalEmpleados;
@@ -1010,5 +1068,7 @@
         private System.Windows.Forms.Panel panel7;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panelContenido;
     }
 }

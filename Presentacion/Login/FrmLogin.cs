@@ -66,10 +66,12 @@ namespace Presentacion.Login
                                     MessageBoxIcon.Information);
 
                     // 4. Abrir el menú principal
-                    frmMenu menuForm = new frmMenu();
-                    menuForm.Show();
+                    frmMenuPrinicpal menuForm = new frmMenuPrinicpal(usuarioEncontrado);
 
-                    // Ocultar el login
+                    // Cuando el menú se cierre, cerramos también el login (y con él, la app)
+                    menuForm.FormClosed += (s, args) => this.Close();
+
+                    menuForm.Show();
                     this.Hide();
                 }
                 else
@@ -160,6 +162,11 @@ namespace Presentacion.Login
         }
 
         private void panel1_Resize(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Resize(object sender, EventArgs e)
         {
 
         }

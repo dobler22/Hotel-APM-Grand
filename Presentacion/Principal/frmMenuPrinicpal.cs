@@ -1,4 +1,12 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using CapadeEntidades.Usuario;
+using Microsoft.Reporting.WinForms;
+using Presentacion.Clientes;
+using Presentacion.Empleados;
+using Presentacion.Factura;
+using Presentacion.Habitaciones;
+using Presentacion.Reportes;
+using Presentacion.Reservas;
+using Presentacion.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +23,11 @@ namespace Presentacion.Principal
     public partial class frmMenuPrinicpal : Form
     {
         private string conexionString = "Data Source=localhost;Initial Catalog=Base_Datos_Hotel_APM_Grand;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
-        public frmMenuPrinicpal()
+        private CapadeEntidades.Usuario.Usuario usuarioEnSesion; // Usuario autenticado actualmente
+        public frmMenuPrinicpal(CapadeEntidades.Usuario.Usuario usuario)
         {
             InitializeComponent();
+            this.usuarioEnSesion = usuario;
         }
 
         private void frmMenuPrinicpal_Load(object sender, EventArgs e)
@@ -25,9 +35,13 @@ namespace Presentacion.Principal
             CargarTarjetaReservas();
             CargarTarjetaClientes();
             CargarTarjetaEmpleados();
+            CargarTarjetaFacturas();
 
             // Carga y renderizado del gráfico de barras RDLC
             CargarReporteGrafico();
+            // 1. Mostrar la información del usuario en el Label principal y en el título
+            label7.Text = $"Usuario: {usuarioEnSesion.Email} | Rol: {usuarioEnSesion.Rol}";
+            this.Text = $"Gestión de Usuarios - Hotel APM Grand";
         }
         private void CargarTarjetaReservas()
         {
@@ -103,6 +117,38 @@ namespace Presentacion.Principal
                 MessageBox.Show("Error al cargar datos de Empleados: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void CargarTarjetaFacturas()
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(conexionString))
+                {
+                    conexion.Open();
+
+                    // 1. Obtener el Total General de Facturas
+                    string queryTotal = "SELECT COUNT(*) FROM Facturas"; // Ajusta 'Facturas' si tu tabla se llama de otro modo (ej. 'Factura')
+                    using (SqlCommand cmdTotal = new SqlCommand(queryTotal, conexion))
+                    {
+                        int totalFacturas = Convert.ToInt32(cmdTotal.ExecuteScalar());
+                        lblTotalFacturas.Text = totalFacturas.ToString(); // Asigna aquí el ID de tu Label principal (el del centro)
+                    }
+
+                    // 2. Obtener las Nuevas Facturas emitidas HOY
+                    string queryNuevas = "SELECT COUNT(*) FROM Facturas WHERE CAST(fecha_emision AS DATE) = CAST(GETDATE() AS DATE)";
+                    // NOTA: Ajusta 'fecha_emision' por el nombre exacto de la columna de fecha en tu base de datos (ej. 'fecha', 'fecha_creacion')
+
+                    using (SqlCommand cmdNuevas = new SqlCommand(queryNuevas, conexion))
+                    {
+                        int nuevasHoy = Convert.ToInt32(cmdNuevas.ExecuteScalar());
+                        lblNuevasFacturas.Text = $"{nuevasHoy} Nuevas Facturas"; // Asigna aquí el ID de tu Label inferior
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos de Facturas: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void CargarReporteGrafico()
         {
             try
@@ -135,6 +181,98 @@ namespace Presentacion.Principal
             {
                 MessageBox.Show("Error al cargar el gráfico: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        // ===== MÉTODO GENÉRICO DE NAVEGACIÓN =====
+        private void AbrirFormEnPanel(Form formulario)
+        {
+            // Ocultar el dashboard (tarjetas)
+            tableLayoutPanel1.Visible = false;
+
+            // Cerrar cualquier formulario embebido anterior
+            foreach (Control c in panelContenido.Controls)
+            {
+                if (c is Form)
+                {
+                    ((Form)c).Close();
+                }
+            }
+
+            // Embeber el nuevo formulario
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+
+            panelContenido.Controls.Add(formulario);
+            formulario.BringToFront();
+            formulario.Show();
+        }
+        private void MostrarDashboard()
+        {
+            // Cerrar formulario embebido si hay uno
+            foreach (Control c in panelContenido.Controls)
+            {
+                if (c is Form)
+                {
+                    ((Form)c).Close();
+                }
+            }
+            // Volver a mostrar las tarjetas
+            tableLayoutPanel1.Visible = true;
+            tableLayoutPanel1.BringToFront();
+        }
+
+        private void btnMenu0_Click(object sender, EventArgs e)
+        {
+            MostrarDashboard();
+        }
+
+        private void btnMenu1_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmClientes());
+        }
+
+        private void btnMenu2_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmHabitaciones());
+        }
+
+        private void btnMenu3_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmReservas());
+        }
+
+        private void btnMenu4_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmFactura());
+        }
+
+        private void btnMenu5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenu6_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmServicios());
+        }
+
+        private void btnMenu7_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmEmpleados());
+        }
+
+        private void btnMenu8_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new frmReportes());
+        }
+
+        private void btnMenu9_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnMenu10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
