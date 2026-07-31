@@ -20,8 +20,13 @@ namespace Presentacion.Clientes
         public frmClientes()
         {
             InitializeComponent();
-            CargarClientes();
+
+            // La tabla arranca oculta. Se muestra al presionar "Ver tabla" en el toolStrip.
+            dataGridView1.Visible = false;
             textBox7.PasswordChar = '*';
+
+            // Enganchamos CellClick para permitir selección completa de la fila
+            this.dataGridView1.CellClick += new DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
         }
 
         // ---------------- Carga del grid ----------------
@@ -29,9 +34,8 @@ namespace Presentacion.Clientes
         {
             dataGridView1.DataSource = clienteLN.ListarClientes();
         }
-        
 
-        // ---------------- Eventos de texto (sin validación en tiempo real por ahora) ----------------
+        // ---------------- Eventos de texto ----------------
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
         }
@@ -68,17 +72,17 @@ namespace Presentacion.Clientes
         {
         }
 
-        private void textBox9_TextChanged(object sender, EventArgs e) // Buscar (sin uso por ahora)
+        private void textBox9_TextChanged(object sender, EventArgs e) // Buscar
         {
             FiltrarClientes(textBox9.Text.Trim());
         }
+
         public void FiltrarClientes(string texto)
         {
             try
             {
                 string filtro = texto?.Trim().ToLower() ?? "";
 
-                // Obtenemos la lista base completa
                 List<Cliente> listaCompleta = clienteLN.ListarClientes();
 
                 if (string.IsNullOrWhiteSpace(filtro))
@@ -87,7 +91,6 @@ namespace Presentacion.Clientes
                 }
                 else
                 {
-                    // Filtramos localmente por cualquier campo relevante
                     var listaFiltrada = listaCompleta.Where(c =>
                         (c.Nombre != null && c.Nombre.ToLower().Contains(filtro)) ||
                         (c.Apellido != null && c.Apellido.ToLower().Contains(filtro)) ||
@@ -129,8 +132,8 @@ namespace Presentacion.Clientes
             }
         }
 
-        // ---------------- Guardar (crea si no hay Id, actualiza si ya existe) ----------------
-        private void btnGuardar_Click(object sender, EventArgs e)
+        // ---------------- Guardar: inserta un cliente nuevo ----------------
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
             {
@@ -139,48 +142,28 @@ namespace Presentacion.Clientes
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(textBox8.Text) || string.IsNullOrWhiteSpace(textBox7.Text))
+            {
+                MessageBox.Show("Correo y contraseña son obligatorios para crear el cliente.", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
-                bool esNuevo = string.IsNullOrWhiteSpace(textBox1.Text);
+                Cliente nuevoCliente = new Cliente(
+                    0, 0,
+                    textBox4.Text.Trim(),
+                    textBox3.Text.Trim(),
+                    textBox6.Text.Trim(),
+                    textBox2.Text.Trim(),
+                    textBox5.Text.Trim(),
+                    dateTimePicker1.Value);
 
-                if (esNuevo)
-                {
-                    if (string.IsNullOrWhiteSpace(textBox8.Text) || string.IsNullOrWhiteSpace(textBox7.Text))
-                    {
-                        MessageBox.Show("Correo y contraseña son obligatorios para crear el cliente.", "Validación",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
+                clienteLN.CrearCliente(textBox8.Text.Trim(), textBox7.Text, nuevoCliente);
 
-                    Cliente nuevoCliente = new Cliente(
-                        0, 0,
-                        textBox4.Text.Trim(),
-                        textBox3.Text.Trim(),
-                        textBox6.Text.Trim(),
-                        textBox2.Text.Trim(),
-                        textBox5.Text.Trim(),
-                        dateTimePicker1.Value);
-
-                    clienteLN.CrearCliente(textBox8.Text.Trim(), textBox7.Text, nuevoCliente);
-                    MessageBox.Show("Cliente creado correctamente.", "Aviso",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    Cliente cliente = new Cliente(
-                        Convert.ToInt32(textBox1.Text),
-                        0,
-                        textBox4.Text.Trim(),
-                        textBox3.Text.Trim(),
-                        textBox6.Text.Trim(),
-                        textBox2.Text.Trim(),
-                        textBox5.Text.Trim(),
-                        dateTimePicker1.Value);
-
-                    clienteLN.ActualizarCliente(cliente);
-                    MessageBox.Show("Cliente actualizado correctamente.", "Aviso",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                MessageBox.Show("Cliente creado correctamente.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 CargarClientes();
                 LimpiarCampos();
@@ -191,16 +174,88 @@ namespace Presentacion.Clientes
             }
         }
 
-        // ---------------- Cancelar: descarta lo que se estaba editando ----------------
-        private void btnCancelar_Click(object sender, EventArgs e)
+        // ---------------- Editar: actualiza el cliente seleccionado ----------------
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            LimpiarCampos();
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Seleccione un cliente del listado para editar.", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(textBox4.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
+            {
+                MessageBox.Show("Nombre y apellido son obligatorios.", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                Cliente cliente = new Cliente(
+                    Convert.ToInt32(textBox1.Text),
+                    0,
+                    textBox4.Text.Trim(),
+                    textBox3.Text.Trim(),
+                    textBox6.Text.Trim(),
+                    textBox2.Text.Trim(),
+                    textBox5.Text.Trim(),
+                    dateTimePicker1.Value);
+
+                clienteLN.ActualizarCliente(cliente);
+
+                MessageBox.Show("Cliente actualizado correctamente.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                CargarClientes();
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        // ---------------- Limpiar: deja el formulario listo para un registro nuevo ----------------
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        // ---------------- Eliminar: borra el cliente seleccionado ----------------
+        private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            LimpiarCampos();
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Seleccione un cliente del listado para eliminar.", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult confirmacion = MessageBox.Show(
+                "¿Está seguro de eliminar este cliente?",
+                "Confirmar",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirmacion != DialogResult.Yes) return;
+
+            try
+            {
+                clienteLN.EliminarCliente(Convert.ToInt32(textBox1.Text));
+
+                MessageBox.Show("El cliente se eliminó correctamente.", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                CargarClientes();
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // ---------------- Ver tabla: muestra el grid y carga los datos ----------------
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = true;
+            CargarClientes();
         }
 
         private void LimpiarCampos()

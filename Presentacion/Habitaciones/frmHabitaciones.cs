@@ -219,7 +219,7 @@ namespace Presentacion.Habitaciones
             }
         }
 
-        // ---------------- Eliminar: borra la habitación seleccionada ----------------
+        
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text))
