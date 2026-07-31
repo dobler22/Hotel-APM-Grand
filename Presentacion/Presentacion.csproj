@@ -192,6 +192,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reservas\frmReservas.resx">
+      <DependentUpon>frmReservas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuariofrms\frmAdminUsuario.resx">
       <DependentUpon>frmAdminUsuario.cs</DependentUpon>
     </EmbeddedResource>

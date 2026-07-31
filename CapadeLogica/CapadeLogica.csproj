@@ -46,6 +46,7 @@
     <Compile Include="ClienteLN.cs" />
     <Compile Include="DashboardLN.cs" />
     <Compile Include="EmpleadoLN.cs" />
+    <Compile Include="FacturaLN.cs" />
     <Compile Include="HabitacionLN.cs" />
     <Compile Include="LogicaExcepciones.cs" />
     <Compile Include="MantenimientoLN.cs" />
