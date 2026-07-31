@@ -1,0 +1,148 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Capara_Presentacion_Web.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Hotel APM Grand</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- CDN FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <!-- BARRA DE NAVEGACIÓN -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+            <div class="container">
+                <!-- Marca / Logotipo de la Empresa -->
+                <a class="navbar-brand fw-bold me-4" runat="server" href="~/">
+                    <i class="fas fa-hotel text-warning me-2"></i>Hotel APM Grand
+                </a>
+
+                <!-- Botón Hamburguesa Móvil -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    title="Alternar navegación" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Contenido colapsable -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Menú Principal -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center">
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/">
+                                <i class="fas fa-home me-1"></i>Inicio
+                            </a>
+                        </li>
+
+                        <!-- Opción RESERVAR: SOLO VISIBLE PARA INVITADOS (Se oculta al iniciar sesión) -->
+                        <li class="nav-item" id="liReservar" runat="server">
+                            <a class="nav-link text-warning fw-bold" runat="server" href="~/frmReservas.aspx">
+                                <i class="fas fa-calendar-plus me-1"></i>Reservar
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= ResolveUrl("~/Default.aspx#habitaciones") %>">Habitaciones</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= ResolveUrl("~/Default.aspx#servicios") %>">Servicios</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= ResolveUrl("~/Default.aspx#resenas") %>">Reseñas</a>
+                        </li>
+
+                        <!-- Opciones PRIVADAS: SOLO VISIBLES CUANDO HAY SESIÓN -->
+                        <li class="nav-item" id="liMisReservas" runat="server" visible="false">
+                            <a class="nav-link text-warning fw-semibold" runat="server" href="~/frmHistorialCliente.aspx">
+                                <i class="fas fa-calendar-check me-1"></i>Mis Reservas
+                            </a>
+                        </li>
+
+                        <li class="nav-item" id="liMisFacturas" runat="server" visible="false">
+                            <a class="nav-link text-warning fw-semibold" runat="server" href="~/frmMisFacturas.aspx">
+                                <i class="fas fa-file-invoice-dollar me-1"></i>Mis Facturas
+                            </a>
+                        </li>
+
+                        <!-- Informativos públicos -->
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/frmAcercaDe.aspx">Acerca de</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/Contacto.aspx">Contacto</a>
+                        </li>
+                    </ul>
+
+                    <!-- Sección Login / Usuario Sesión (Esquina Derecha) -->
+                    <div class="d-flex align-items-center ms-auto">
+                        <!-- Estado 1: Sin sesión -->
+                        <asp:Panel ID="pnlAnonimo" runat="server" CssClass="d-flex gap-2">
+                            <a href="Login.aspx" class="btn btn-outline-warning btn-sm rounded-pill px-3">
+                                <i class="fas fa-sign-in-alt me-1"></i>Iniciar Sesión
+                            </a>
+                            <a href="Registro.aspx" class="btn btn-warning btn-sm rounded-pill px-3 fw-bold">Registrarse
+                            </a>
+                        </asp:Panel>
+
+                        <!-- Estado 2: Con sesión iniciada (Con botón directo de Salir para evitar bloqueos) -->
+                        <asp:Panel ID="pnlAutenticado" runat="server" Visible="false" CssClass="d-flex align-items-center gap-3">
+                            <span class="text-white small d-flex align-items-center gap-2">
+                                <i class="fas fa-user-circle text-warning fs-5"></i>
+                                <span class="fw-bold">
+                                    <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
+                                </span>
+                            </span>
+                            <asp:LinkButton ID="btnCerrarSesion" runat="server" CssClass="btn btn-outline-danger btn-sm rounded-pill px-3" OnClick="btnCerrarSesion_Click" CauseValidation="false">
+                        <i class="fas fa-sign-out-alt me-1"></i>Salir
+                            </asp:LinkButton>
+                        </asp:Panel>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="container body-content py-4">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr class="mt-5" />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Hotel APM Grand. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+    </form>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>
