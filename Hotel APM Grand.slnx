@@ -2,5 +2,6 @@
   <Project Path="CapadeDatos/CapadeDatos.csproj" Id="93d14488-63c7-4fd3-8305-11e4deda5346" />
   <Project Path="CapadeEntidades/CapadeEntidades.csproj" Id="0977a82f-8799-41f5-8956-2508c7a172cd" />
   <Project Path="CapadeLogica/CapadeLogica.csproj" Id="263c7ef7-7930-49b9-b0eb-735c734122d4" />
+  <Project Path="Capara Presentacion Web/Capara Presentacion Web.csproj" Id="aa34519a-69b3-4bdf-ae7d-9067160355f6" />
   <Project Path="Presentacion/Presentacion.csproj" Id="d0640665-784a-4251-9da2-63b6c113be7d" />
 </Solution>
