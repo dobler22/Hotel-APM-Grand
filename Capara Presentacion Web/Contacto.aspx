@@ -158,7 +158,7 @@
                             </p>
                         </div>
                         <div class="card-footer bg-transparent border-0 pb-3">
-                            <a href="mailto:asquishpe@utmachala.edu.ec" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                            <a href="mailto:aquishpe2@utmachala.edu.ec" class="btn btn-outline-dark btn-sm rounded-pill px-3">
                                 <i class="fas fa-envelope me-1"></i>Contactar
                             </a>
                         </div>
@@ -179,7 +179,7 @@
                             </p>
                         </div>
                         <div class="card-footer bg-transparent border-0 pb-3">
-                            <a href="mailto:sdmoreno@utmachala.edu.ec" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                            <a href="mailto:smoreno9@utmachala.edu.ec" class="btn btn-outline-dark btn-sm rounded-pill px-3">
                                 <i class="fas fa-envelope me-1"></i>Contactar
                             </a>
                         </div>

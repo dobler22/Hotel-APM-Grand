@@ -66,5 +66,16 @@ namespace CapadeDatos.Properties {
                 return ((string)(this["Base_Datos_Hotel_APM_GrandConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-23BPHEQS;Initial Catalog=Base_Datos_Hotel_APM_Grand;Integrated" +
+            " Security=True;Encrypt=True;TrustServerCertificate=True")]
+        public string Base_Datos_Hotel_APM_GrandConnectionString3 {
+            get {
+                return ((string)(this["Base_Datos_Hotel_APM_GrandConnectionString3"]));
+            }
+        }
     }
 }

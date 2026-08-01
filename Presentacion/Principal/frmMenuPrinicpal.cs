@@ -22,19 +22,15 @@ namespace Presentacion.Principal
 {
     public partial class frmMenuPrinicpal : Form
     {
-<<<<<<< Updated upstream
-        private string conexionString = "Data Source=localhost;Initial Catalog=Base_Datos_Hotel_APM_Grand;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
+
+        private string conexionString = @"Data Source=.;Initial Catalog=""Base_Datos_Hotel_APM_Grand"";Integrated Security=True;Encrypt=False;TrustServerCertificate=True;";
         private CapadeEntidades.Usuario.Usuario usuarioEnSesion; // Usuario autenticado actualmente
+
         public frmMenuPrinicpal(CapadeEntidades.Usuario.Usuario usuario)
-=======
-        private string conexionString = "Data Source=DESKTOP-CF2J6U8;Initial Catalog=\"base de datos 2\";Persist Security Info=True;User ID=sa;Password=1234;Encrypt=True;TrustServerCertificate=True";
-        public frmMenuPrinicpal()
->>>>>>> Stashed changes
         {
             InitializeComponent();
             this.usuarioEnSesion = usuario;
         }
-
         private void frmMenuPrinicpal_Load(object sender, EventArgs e)
         {
             CargarTarjetaReservas();
